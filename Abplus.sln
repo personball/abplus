@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Events.Producer", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus", "src\Abplus\Abplus.csproj", "{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.RebusRabbitmqConsumer", "src\Abplus.RebusRabbitmqConsumer\Abplus.RebusRabbitmqConsumer.csproj", "{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.RebusRabbitmqProducer", "src\Abplus.RebusRabbitmqProducer\Abplus.RebusRabbitmqProducer.csproj", "{17DC37E5-6756-4462-AF34-674738762F0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17DC37E5-6756-4462-AF34-674738762F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17DC37E5-6756-4462-AF34-674738762F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17DC37E5-6756-4462-AF34-674738762F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17DC37E5-6756-4462-AF34-674738762F0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

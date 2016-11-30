@@ -10,7 +10,7 @@
             return JsonConvert.SerializeObject(obj, new JsonSerializerSettings
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver(),
-                DateFormatString = YMCAbpConsts.JsonConvertDateFormatString
+                DateFormatString = AbplusConsts.JsonConvertDateFormatString
             });
         }
     }

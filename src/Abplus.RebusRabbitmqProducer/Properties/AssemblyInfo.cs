@@ -6,11 +6,11 @@ using Abp;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Abplus.Events.Producer")]
+[assembly: AssemblyTitle("Abplus.RebusRabbitmqProducer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Abplus.Events.Producer")]
+[assembly: AssemblyProduct("Abplus.RebusRabbitmqProducer")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +21,7 @@ using Abp;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("e9957d88-655d-4411-98c3-c7d6009ba13c")]
+[assembly: Guid("17dc37e5-6756-4462-af34-674738762f0b")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

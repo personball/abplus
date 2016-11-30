@@ -108,6 +108,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Abplus.RebusRabbitmqProducer.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

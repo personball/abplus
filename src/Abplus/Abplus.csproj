@@ -107,6 +107,7 @@
     <Folder Include="Events\Bus\Entities\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Abplus.nuspec" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

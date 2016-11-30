@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Events.Producer", "src\Abplus.Events.Producer\Abplus.Events.Producer.csproj", "{E9957D88-655D-4411-98C3-C7D6009BA13C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus", "src\Abplus\Abplus.csproj", "{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9957D88-655D-4411-98C3-C7D6009BA13C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9957D88-655D-4411-98C3-C7D6009BA13C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9957D88-655D-4411-98C3-C7D6009BA13C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9957D88-655D-4411-98C3-C7D6009BA13C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

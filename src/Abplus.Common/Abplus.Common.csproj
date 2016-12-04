@@ -96,10 +96,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Services\Dto\IPagedQueryInput.cs" />
+    <Compile Include="Application\Services\Dto\PagedQueryInput.cs" />
+    <Compile Include="Linq\Extensions\IQueryableExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Abplus.Common.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

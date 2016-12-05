@@ -61,10 +61,10 @@ namespace Abp.Linq.Extensions
             where TSource : class
             where TDto : class
         {
-            query = query.SortAndPageBy(requestInput);
+            var pagedQuery = query.SortAndPageBy(requestInput);
             var result = new PagedResultDto<TDto>()
             {
-                Items = await query.ProjectTo<TDto>().ToListAsync()
+                Items = await pagedQuery.ProjectTo<TDto>().ToListAsync()
             };
 
             //没有分页参数，或者第1页的结果不足一整页时，不需要统计总记录数

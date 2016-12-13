@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.RebusRabbitmqProduce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Common", "src\Abplus.Common\Abplus.Common.csproj", "{2C69763F-3880-4D4D-8E14-A0D3A2B2B4F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Web.Api", "src\Abplus.Web.Api\Abplus.Web.Api.csproj", "{84D80055-6A95-4DE3-B1E7-68B88838F2BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2C69763F-3880-4D4D-8E14-A0D3A2B2B4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C69763F-3880-4D4D-8E14-A0D3A2B2B4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C69763F-3880-4D4D-8E14-A0D3A2B2B4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D80055-6A95-4DE3-B1E7-68B88838F2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D80055-6A95-4DE3-B1E7-68B88838F2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D80055-6A95-4DE3-B1E7-68B88838F2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D80055-6A95-4DE3-B1E7-68B88838F2BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

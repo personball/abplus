@@ -13,25 +13,41 @@ namespace Abp.Linq.Extensions
     using Abp.Threading;
     using Domain.Entities;
     using System.Linq.Expressions;
+    using Abp.Extensions;
 
     public static class IQueryableExtension
     {
         /// <summary>
+        /// 应用requestInput指定的排序参数
+        /// </summary>
+        public static IQueryable<T> ApplySorting<T>(this IQueryable<T> query, ISortedResultRequest requestInput = null) where T : class
+        {
+            if (requestInput != null && !requestInput.Sorting.IsNullOrWhiteSpace())  //有排序参数
+            {
+                return query.OrderBy(requestInput.Sorting);
+            }
+            return query;
+        }
+
+        /// <summary>
+        /// 应用requestInput指定的分页参数
+        /// </summary>
+        public static IQueryable<T> ApplyPaging<T>(this IQueryable<T> query, IPagedResultRequest requestInput = null) where T : class
+        {
+            if (requestInput != null)
+            {
+                return query.PageBy(requestInput);
+            }
+            return query;
+        }
+
+        /// <summary>
         /// 根据requestInput进行排序、分页。
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="requestInput">查询参数</param>
-        /// <returns></returns>
-        public static IQueryable<T> SortAndPageBy<T>(this IQueryable<T> query, IPagedQueryInput requestInput = null) where T : class
+        public static IQueryable<T> ApplySortingAndPaging<T>(this IQueryable<T> query, IPagedQueryInput requestInput = null) where T : class
         {
-            if (requestInput != null)  //有排序、分页参数
-            {
-                if (!string.IsNullOrWhiteSpace(requestInput.Sorting))
-                {
-                    query = query.OrderBy(requestInput.Sorting);
-                }
-                query = query.PageBy(requestInput);
-            }
+            query = query.ApplySorting(requestInput);
+            query = query.ApplyPaging(requestInput);
 
             return query;
         }
@@ -39,14 +55,46 @@ namespace Abp.Linq.Extensions
         /// <summary>
         /// 转换为指定Dto类型的IQueryable
         /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <typeparam name="TDto"></typeparam>
-        /// <param name="query"></param>
-        /// <param name="membersToExpand"></param>
-        /// <returns></returns>
         public static IQueryable<TDto> ProjectTo<TSource, TDto>(this IQueryable<TSource> query, params Expression<Func<TDto, object>>[] membersToExpand)
         {
             return query.ProjectTo<TDto>(membersToExpand);
+        }
+
+        /// <summary>
+        /// 只查Dto类型指定字段的列表数据
+        /// </summary>
+        /// <typeparam name="TSource">实体类型</typeparam>
+        /// <typeparam name="TDto">列表Dto类型</typeparam>
+        /// <param name="query"></param>
+        /// <param name="requestInput">查询参数（指定排序列）</param>
+        /// <returns>查询出Dto类型指定字段的列表数据</returns>
+        public static async Task<ListResultDto<TDto>> ToListResultAsync<TSource, TDto>(this IQueryable<TSource> query, ISortedResultRequest requestInput = null)
+            where TSource : class
+            where TDto : class
+        {
+            query = query.ApplySorting(requestInput);
+
+            var result = new ListResultDto<TDto>()
+            {
+                Items = await query.ProjectTo<TDto>().ToListAsync()
+            };
+
+            return result;
+        }
+
+        /// <summary>
+        /// 只查Dto类型指定字段的列表数据
+        /// </summary>
+        /// <typeparam name="TSource">实体类型</typeparam>
+        /// <typeparam name="TDto">列表Dto类型</typeparam>
+        /// <param name="query"></param>
+        /// <param name="requestInput">查询参数（指定排序列）</param>
+        /// <returns>查询出Dto类型指定字段的列表数据</returns>
+        public static ListResultDto<TDto> ToListResult<TSource, TDto>(this IQueryable<TSource> query, ISortedResultRequest requestInput = null)
+            where TSource : class
+            where TDto : class
+        {
+            return AsyncHelper.RunSync(() => query.ToListResultAsync<TSource, TDto>(requestInput));
         }
 
         /// <summary>
@@ -61,7 +109,7 @@ namespace Abp.Linq.Extensions
             where TSource : class
             where TDto : class
         {
-            var pagedQuery = query.SortAndPageBy(requestInput);
+            var pagedQuery = query.ApplySortingAndPaging(requestInput);
             var result = new PagedResultDto<TDto>()
             {
                 Items = await pagedQuery.ProjectTo<TDto>().ToListAsync()
@@ -87,132 +135,12 @@ namespace Abp.Linq.Extensions
         /// <param name="query"></param>
         /// <param name="requestInput">查询参数</param>
         /// <returns></returns>
-        public static PagedResultDto<TDto> ToPagedResult<TSource, TDto>(this IQueryable<TSource> query, IPagedQueryInput requestInput = null) 
+        public static PagedResultDto<TDto> ToPagedResult<TSource, TDto>(this IQueryable<TSource> query, IPagedQueryInput requestInput = null)
             where TSource : class
             where TDto : class
         {
             return AsyncHelper.RunSync(() => query.ToPagedResultAsync<TSource, TDto>(requestInput));
         }
 
-        ///// <summary>
-        ///// 生成一个新的查询表达式，用于支持调用To方法时，只需要指定目标Dto类型，而不需要再指定源实体类型
-        ///// 根据requestInput进行排序、分页。
-        ///// </summary>
-        ///// <typeparam name="TSource"></typeparam>
-        ///// <param name="requestInput">传递查询参数的对象</param>
-        ///// <returns></returns>
-        //public static QueryExpression<TSource> Query<TSource>(this IQueryable<TSource> query, IPagedQueryInput requestInput = null)
-        //    where TSource : class
-        //{
-        //    var expression = new QueryExpression<TSource>(query, requestInput);
-        //    return expression;
-        //}
-
     }
-
-    //public class QueryExpression<TSource>
-    //    where TSource : class
-    //{
-    //    private IQueryable<TSource> _source;
-    //    private IPagedQueryInput _requestInput;
-
-    //    public QueryExpression(IQueryable<TSource> source, IPagedQueryInput requestInput = null)
-    //    {
-    //        this._source = source;
-    //        this._requestInput = requestInput;
-    //    }
-
-    //    /// <summary>
-    //    /// 返回添加排序和分页后的IQueryable
-    //    /// </summary>
-    //    /// <typeparam name="TDto"></typeparam>
-    //    /// <returns></returns>
-    //    public IQueryable<TSource> To()
-    //    {
-    //        return GetQuery(_source);
-    //    }
-
-    //    /// <summary>
-    //    /// 转换指定Dto类型的IQueryable
-    //    /// </summary>
-    //    /// <typeparam name="TDto"></typeparam>
-    //    /// <returns></returns>
-    //    public IQueryable<TDto> To<TDto>() where TDto : class
-    //    {
-    //        var query = GetQuery(_source);
-
-    //        return query.ProjectTo<TDto>();
-    //    }
-
-
-    //    /// <summary>
-    //    /// 生成指定Dto类型的分页结果
-    //    /// </summary>
-    //    /// <typeparam name="TDto">输出的Dto类型</typeparam>
-    //    /// <returns></returns>
-    //    public PagedResultDto<TDto> ToPagedResult<TDto>() where TDto : class
-    //    {
-    //        return AsyncHelper.RunSync(() => ToPagedResultAsync<TDto>());
-    //    }
-
-    //    /// <summary>
-    //    /// 生成指定Dto类型的分页结果
-    //    /// </summary>
-    //    /// <typeparam name="TDto">输出的Dto类型</typeparam>
-    //    /// <returns></returns>
-    //    public async Task<PagedResultDto<TDto>> ToPagedResultAsync<TDto>() where TDto : class
-    //    {
-    //        return await _source.ToPagedResultAsync<TSource, TDto>(_requestInput);
-    //    }
-
-
-    //    /// <summary>
-    //    /// 生成指定Dto类型的列表
-    //    /// </summary>
-    //    public List<TDto> ToList<TDto>() where TDto : class
-    //    {
-    //        return AsyncHelper.RunSync(() => ToListAsync<TDto>());
-    //    }
-
-    //    /// <summary>
-    //    /// 生成指定Dto类型的列表
-    //    /// </summary>
-    //    public async Task<List<TDto>> ToListAsync<TDto>() where TDto : class
-    //    {
-    //        var query = GetQuery(_source);
-
-    //        return await query.ProjectTo<TDto>().ToListAsync();
-    //    }
-
-    //    /// <summary>
-    //    /// 生成原类型的列表
-    //    /// </summary>
-    //    public List<TSource> ToList()
-    //    {
-    //        return AsyncHelper.RunSync(() => ToListAsync());
-    //    }
-
-    //    /// <summary>
-    //    /// 生成原类型的列表
-    //    /// </summary>
-    //    public async Task<List<TSource>> ToListAsync()
-    //    {
-    //        var query = GetQuery(_source);
-
-    //        return await query.ToListAsync();
-    //    }
-
-    //    private IQueryable<T> GetQuery<T>(IQueryable<T> query)
-    //    {
-    //        if (_requestInput != null)  //不排序、分页参数
-    //        {
-    //            if (!string.IsNullOrWhiteSpace(_requestInput.Sorting))
-    //            {
-    //                query = query.OrderBy(_requestInput.Sorting);
-    //            }
-    //            query = query.PageBy(_requestInput);
-    //        }
-    //        return query;
-    //    }
-    //}
 }

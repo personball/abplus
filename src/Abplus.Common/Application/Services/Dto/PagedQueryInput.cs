@@ -5,20 +5,18 @@
 
     public class PagedQueryInput : IPagedQueryInput
     {
-        const int MaxPageSize = 100;
+        const int MaxPageSize = 500;
         const int DefaultPageSize = 10;
 
-        public string Keyword { get; set; }
-
         [Range(1, MaxPageSize)]
-        public int MaxResultCount { get; set; }
+        public virtual int MaxResultCount { get; set; }
 
         [Range(0, int.MaxValue)]
-        public int SkipCount { get; set; }
+        public virtual int SkipCount { get; set; }
 
-        public string Sorting { get; set; }
+        public virtual string Sorting { get; set; }
 
-        public string Filter { get; set; }
+        public virtual string Filter { get; set; }
 
         public PagedQueryInput()
         {

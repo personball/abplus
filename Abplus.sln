@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Common", "src\Abplus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Web.Api", "src\Abplus.Web.Api\Abplus.Web.Api.csproj", "{84D80055-6A95-4DE3-B1E7-68B88838F2BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Web.SignalR", "src\Abplus.Web.SignalR\Abplus.Web.SignalR.csproj", "{27F80F3E-AEC9-47BC-8FF0-2FE9197A2293}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{84D80055-6A95-4DE3-B1E7-68B88838F2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84D80055-6A95-4DE3-B1E7-68B88838F2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84D80055-6A95-4DE3-B1E7-68B88838F2BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F80F3E-AEC9-47BC-8FF0-2FE9197A2293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F80F3E-AEC9-47BC-8FF0-2FE9197A2293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F80F3E-AEC9-47BC-8FF0-2FE9197A2293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F80F3E-AEC9-47BC-8FF0-2FE9197A2293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

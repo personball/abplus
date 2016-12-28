@@ -1,7 +1,7 @@
 ﻿using Abp.Configuration.Startup;
 using Abp.RealTime;
 
-namespace Abp.Configuration.Starup
+namespace Abp.Configuration.Startup
 {
     public static class RedisOnlineClientManagerConfiguationExtensions
     {

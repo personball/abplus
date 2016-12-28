@@ -89,7 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\Starup\RedisOnlineClientManagerConfiguationExtensions.cs" />
+    <Compile Include="Configuration\Startup\RedisOnlineClientManagerConfiguationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealTime\IRedisOnlineClientManagerModuleConfig.cs" />
     <Compile Include="RealTime\RedisOnlineClientManager.cs" />

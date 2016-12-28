@@ -94,13 +94,13 @@ namespace Abp.RealTime
                 return;
             }
 
+            var userClients = new List<string>();
             var userClientsValue = _database.HashGet(_userStoreKey, userId.ToUserIdentifierString());
-            if (userClientsValue.IsNullOrEmpty)
+            if (userClientsValue.HasValue)
             {
-                _database.HashDelete(_userStoreKey, userId.ToUserIdentifierString());
+                userClients = JsonConvert.DeserializeObject<List<string>>(userClientsValue);
             }
 
-            var userClients = JsonConvert.DeserializeObject<List<string>>(userClientsValue);
             if (userClients.Contains(client.ConnectionId))
             {
                 return;
@@ -157,7 +157,7 @@ namespace Abp.RealTime
                 isRemoved = true;
 
                 var client = JsonConvert.DeserializeObject<OnlineClient>(clientValue);
-                
+
                 if (isRemoved)
                 {
                     var user = client.ToUserIdentifierOrNull();

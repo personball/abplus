@@ -97,6 +97,7 @@
     <Compile Include="RealTime\RedisOnlineClientManagerModuleConfig.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Abplus.Web.SignalR.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

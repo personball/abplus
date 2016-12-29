@@ -10,6 +10,10 @@ using StackExchange.Redis;
 
 namespace Abp.RealTime
 {
+    /// <summary>
+    /// TODO:upgrade abp to get latest IOnlineClientManager with GetAllByUserId defined!
+    /// see https://github.com/aspnetboilerplate/aspnetboilerplate/issues/1704
+    /// </summary>
     public class RedisOnlineClientManager : IOnlineClientManager
     {
         public event EventHandler<OnlineClientEventArgs> ClientConnected;
@@ -38,8 +42,8 @@ namespace Abp.RealTime
 
             _connectionString = config.ConnectionString;
             _storeKey = config.StoreKey;
-            _clientStoreKey = _storeKey + ".clients";
-            _userStoreKey = _storeKey + ".users";
+            _clientStoreKey = _storeKey + ".Clients";
+            _userStoreKey = _storeKey + ".Users";
             Logger = NullLogger.Instance;
 
             _connectionMultiplexer = new Lazy<ConnectionMultiplexer>(CreateConnectionMultiplexer);

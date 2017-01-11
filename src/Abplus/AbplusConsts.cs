@@ -2,7 +2,7 @@
 {
     public static class AbplusConsts
     {
-        public const string CurrentVersion = "0.1.1.0";
+        public const string CurrentVersion = "0.1.1.1";
         /// <summary>
         /// 全局统一的Json序列化日期格式
         /// </summary>

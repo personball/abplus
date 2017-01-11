@@ -30,7 +30,7 @@ namespace Abp.Web.SignalR.QrScan
             Logger = NullLogger.Instance;
         }
 
-        public Task Notify(string scannerId, string connectionId, object properties)
+        public Task Notify(string scannerId, string connectionId, object properties = null)
         {
             try
             {

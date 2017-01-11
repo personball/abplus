@@ -4,6 +4,6 @@ namespace Abp.MpIntegration.QrScan
 {
     public interface IQrScanNotifier
     {
-        Task Notify(string scannerId, string connectionId, object properties);
+        Task Notify(string scannerId, string connectionId, object properties = null);
     }
 }

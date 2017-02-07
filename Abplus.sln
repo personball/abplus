@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Web.Api", "src\Abplu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Web.SignalR", "src\Abplus.Web.SignalR\Abplus.Web.SignalR.csproj", "{27F80F3E-AEC9-47BC-8FF0-2FE9197A2293}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.WebApiVersionRoute", "src\Abplus.WebApiVersionRoute\Abplus.WebApiVersionRoute.csproj", "{164FA03A-1BC2-44B5-878E-45273EE9D901}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{D0CE77FE-021E-4BBD-B8B5-403BB19A5547}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.WebApiVersionRoute.Sample", "src\Samples\Abplus.WebApiVersionRoute.Sample\Abplus.WebApiVersionRoute.Sample.csproj", "{9B3DE552-D101-4449-BFDE-EC8A5C149C2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,8 +57,19 @@ Global
 		{27F80F3E-AEC9-47BC-8FF0-2FE9197A2293}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27F80F3E-AEC9-47BC-8FF0-2FE9197A2293}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27F80F3E-AEC9-47BC-8FF0-2FE9197A2293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164FA03A-1BC2-44B5-878E-45273EE9D901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164FA03A-1BC2-44B5-878E-45273EE9D901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164FA03A-1BC2-44B5-878E-45273EE9D901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164FA03A-1BC2-44B5-878E-45273EE9D901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B} = {D0CE77FE-021E-4BBD-B8B5-403BB19A5547}
 	EndGlobalSection
 EndGlobal

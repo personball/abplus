@@ -95,6 +95,10 @@
     </Reference>
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -104,6 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebApiVersionRoute\RoutingConstraints\VersionConstraint.cs" />
+    <Compile Include="WebApiVersionRoute\RoutingConstraints\VersionedRoute.cs" />
+    <Compile Include="WebApiVersionRoute\SysCode.cs" />
+    <Compile Include="WebApiVersionRoute\Version.cs" />
+    <Compile Include="WebApiVersionRoute\VersionConsts.cs" />
+    <Compile Include="WebApiVersionRoute\VersionRange.cs" />
     <Compile Include="WebApi\JsonMediaTypeFormatterExtension.cs" />
   </ItemGroup>
   <ItemGroup>

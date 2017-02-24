@@ -5,7 +5,7 @@ namespace Abp.WebApi
 {
     public static class JsonMediaTypeFormatterExtension
     {
-        public static void SetCustomDataFormatString(this JsonMediaTypeFormatter formatter, string dateTimeFormat)
+        public static void SetCustomDateFormatString(this JsonMediaTypeFormatter formatter, string dateTimeFormat)
         {
             var converters = formatter.SerializerSettings.Converters;
             foreach (var converter in converters)

@@ -10,10 +10,6 @@ using StackExchange.Redis;
 
 namespace Abp.RealTime
 {
-    /// <summary>
-    /// TODO:upgrade abp to get latest IOnlineClientManager with GetAllByUserId defined!
-    /// see https://github.com/aspnetboilerplate/aspnetboilerplate/issues/1704
-    /// </summary>
     public class RedisOnlineClientManager : IOnlineClientManager
     {
         public event EventHandler<OnlineClientEventArgs> ClientConnected;
@@ -176,6 +172,41 @@ namespace Abp.RealTime
 
                 return isRemoved;
             }
+        }
+
+        public IReadOnlyList<IOnlineClient> GetAllByUserId(IUserIdentifier user)
+        {
+            var clients = new List<OnlineClient>();
+
+            var userIdentifier = new UserIdentifier(user.TenantId, user.UserId);
+            if (!IsUserOnline(userIdentifier))
+            {
+                return clients;
+            }
+
+            lock (_syncObj)
+            {
+                var _database = GetDatabase();
+
+                var userClients = new List<string>();
+                var userClientsValue = _database.HashGet(_userStoreKey, userIdentifier.ToUserIdentifierString());
+                if (userClientsValue.HasValue)
+                {
+                    userClients = JsonConvert.DeserializeObject<List<string>>(userClientsValue);
+                    foreach (var connectionId in userClients)
+                    {
+                        var clientValue = _database.HashGet(_clientStoreKey, connectionId);
+                        if (clientValue.IsNullOrEmpty)
+                        {
+                            continue;
+                        }
+
+                        clients.Add(JsonConvert.DeserializeObject<OnlineClient>(clientValue));
+                    }
+                }
+            }
+
+            return clients;
         }
     }
 }

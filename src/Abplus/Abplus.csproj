@@ -104,6 +104,7 @@
     <Compile Include="Application\Services\Dto\IHasKeywordFilterRequest.cs" />
     <Compile Include="Application\Services\Dto\IPaginationResultRequest.cs" />
     <Compile Include="Application\Services\Dto\PaginationRequestInput.cs" />
+    <Compile Include="Currencies\ChineseCentExtension.cs" />
     <Compile Include="Events\Bus\ChangedEventData.cs" />
     <Compile Include="Events\Bus\IShouldBePublish.cs" />
     <Compile Include="Exceptions\Publish\AbpExceptionPublishAttribute.cs" />
@@ -115,8 +116,8 @@
     <Compile Include="Extensions\GuidExtensions.cs" />
     <Compile Include="Extensions\IntExtension.cs" />
     <Compile Include="Extensions\NullableDateTimeExtensions.cs" />
-    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Json\LargeNumJsonConverter.cs" />
     <Compile Include="MpIntegration\QrScan\IQrScanNotifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -130,8 +130,8 @@
     <Compile Include="RealTime\RedisOnlineClientManager.cs" />
     <Compile Include="RealTime\RedisOnlineClientManagerModule.cs" />
     <Compile Include="RealTime\RedisOnlineClientManagerModuleConfig.cs" />
-    <Compile Include="Web\SignalR\QrScan\SignalRQrScanNotifier.cs" />
-    <Compile Include="Web\SignalR\QrScan\SignalRQrScanNotifierModule.cs" />
+    <Compile Include="Web\SignalR\QrScan\SignalRQrCodeScannedRealTimeNotifier.cs" />
+    <Compile Include="Web\SignalR\QrScan\SignalRQrCodeScannedRealTimeNotifierModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Abplus.Web.SignalR.nuspec" />

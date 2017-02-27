@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Abp.MpIntegration.QrScan;
+using Abp.QrCode;
 using Abp.Web.SignalR.Hubs;
 using Castle.Core.Logging;
 using Microsoft.AspNet.SignalR;
 
 namespace Abp.Web.SignalR.QrScan
 {
-    public class SignalRQrScanNotifier : IQrScanNotifier
+    public class SignalRQrCodeScannedRealTimeNotifier : IQrCodeScannedRealTimeNotifier
     {
         /// <summary>
         /// Reference to the logger.
@@ -25,7 +25,7 @@ namespace Abp.Web.SignalR.QrScan
         /// <summary>
         /// Initializes a new instance of the <see cref="SignalRRealTimeNotifier"/> class.
         /// </summary>
-        public SignalRQrScanNotifier()
+        public SignalRQrCodeScannedRealTimeNotifier()
         {
             Logger = NullLogger.Instance;
         }

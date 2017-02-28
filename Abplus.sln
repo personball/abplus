@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{D0CE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.WebApiVersionRoute.Sample", "src\Samples\Abplus.WebApiVersionRoute.Sample\Abplus.WebApiVersionRoute.Sample.csproj", "{9B3DE552-D101-4449-BFDE-EC8A5C149C2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Web.SimpleCaptcha", "src\Abplus.Web.SimpleCaptcha\Abplus.Web.SimpleCaptcha.csproj", "{2AEA2117-3019-41B0-94F9-2B071B4FDEE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AEA2117-3019-41B0-94F9-2B071B4FDEE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AEA2117-3019-41B0-94F9-2B071B4FDEE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AEA2117-3019-41B0-94F9-2B071B4FDEE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AEA2117-3019-41B0-94F9-2B071B4FDEE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

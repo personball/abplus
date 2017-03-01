@@ -241,12 +241,22 @@ namespace Abp.Web.SimpleCaptcha
                 throw new UserFriendlyException("VerificationCode Expired!");
             }
 
+            var matched = false;
             if (_config.CaseSensitive)
             {
-                return codeStored == codeToBeVerified;
+                matched = (codeStored == codeToBeVerified);
+            }
+            else
+            {
+                matched = (codeStored.ToLower() == codeToBeVerified.ToLower());
             }
 
-            return codeStored.ToLower() == codeToBeVerified.ToLower();
+            if (matched && !_config.CodeReusable)
+            {
+                _codeStore.Clear(storeKey);
+            }
+
+            return matched;
         }
     }
 }

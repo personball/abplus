@@ -7,6 +7,7 @@ namespace Abp.Web.SimpleCaptcha
     {
         public SimpleCaptchaModuleConfig()
         {
+            CodeReusable = false;
             TwistEnabled = false;
             RandomLineEnabled = true;
             RandomLineCount = 1;
@@ -56,6 +57,17 @@ namespace Abp.Web.SimpleCaptcha
         /// 排除易混淆字符，默认"01IOlo"
         /// </summary>
         public string CharSetExcluded { get; private set; }
+
+        /// <summary>
+        /// 验证码是否可重复使用，默认false
+        /// </summary>
+        public bool CodeReusable { get; private set; }
+
+        public ISimpleCaptchaModuleConfig EnableCodeReusable(bool enabled)
+        {
+            CodeReusable = enabled;
+            return this;
+        }
 
         public ISimpleCaptchaModuleConfig EnableTwist(bool enabled)
         {

@@ -11,5 +11,7 @@ namespace Abp.Web.SimpleCaptcha
         void Save(string storeKey, string verificationCode);
 
         string Find(string storeKey);
+
+        void Clear(string storeKey);
     }
 }

@@ -1,15 +1,30 @@
 ﻿using System;
 using System.Web;
+using Abp.UI;
 
 namespace Abp.Web.SimpleCaptcha
 {
     public class SessionVerificationCodeStore : IVerificationCodeStore
     {
+        public void Clear(string storeKey)
+        {
+            Check.NotNullOrWhiteSpace(storeKey, nameof(storeKey));
+
+            if (HttpContext.Current.Session == null)
+            {
+                return;
+            }
+
+            HttpContext.Current.Session.Remove(storeKey);
+        }
+
         public string Find(string storeKey)
         {
-            if (string.IsNullOrWhiteSpace(storeKey))
+            Check.NotNullOrWhiteSpace(storeKey, nameof(storeKey));
+
+            if (HttpContext.Current.Session == null)
             {
-                throw new ArgumentNullException(nameof(storeKey), $"{nameof(storeKey)} should not be empty!");
+                throw new UserFriendlyException("HttpContext.Current.Session is null! ");
             }
 
             if (HttpContext.Current.Session[storeKey] == null)
@@ -22,14 +37,12 @@ namespace Abp.Web.SimpleCaptcha
 
         public void Save(string storeKey, string verificationCode)
         {
-            if (string.IsNullOrWhiteSpace(storeKey))
-            {
-                throw new ArgumentNullException(nameof(storeKey), $"{nameof(storeKey)} should not be empty!");
-            }
+            Check.NotNullOrWhiteSpace(storeKey, nameof(storeKey));
+            Check.NotNullOrWhiteSpace(verificationCode, nameof(verificationCode));
 
-            if (string.IsNullOrWhiteSpace(verificationCode))
+            if (HttpContext.Current.Session == null)
             {
-                throw new ArgumentNullException(nameof(verificationCode), $"{nameof(verificationCode)} should not be empty!");
+                throw new UserFriendlyException("HttpContext.Current.Session is null! ");
             }
 
             HttpContext.Current.Session[storeKey] = verificationCode;

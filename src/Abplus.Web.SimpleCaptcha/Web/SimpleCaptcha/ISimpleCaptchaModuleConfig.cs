@@ -7,6 +7,11 @@ namespace Abp.Web.SimpleCaptcha
         #region Properties
 
         /// <summary>
+        /// 验证码是否可重复使用，默认false
+        /// </summary>
+        bool CodeReusable { get; }
+
+        /// <summary>
         /// 是否扭曲，默认不扭曲
         /// </summary>
         bool TwistEnabled { get; }

@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Abplus.Web.SignalR.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Abp, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">

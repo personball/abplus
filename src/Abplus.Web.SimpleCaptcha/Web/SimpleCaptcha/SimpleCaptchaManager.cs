@@ -83,7 +83,7 @@ namespace Abp.Web.SimpleCaptcha
                 var units = _config.CharSetExcluded.ToCharArray();
                 foreach (var unit in units)
                 {
-                    charSetString.Replace(unit.ToString(), "");
+                    charSetString = charSetString.Replace(unit.ToString(), "");
                 }
             }
 

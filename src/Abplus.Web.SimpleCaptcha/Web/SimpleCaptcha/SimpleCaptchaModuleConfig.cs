@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Linq;
-
+using Abp.Dependency;
+using Abp.Web.SimpleCaptcha.VerificationCodeStores;
 namespace Abp.Web.SimpleCaptcha
 {
     public class SimpleCaptchaModuleConfig : ISimpleCaptchaModuleConfig
     {
         public SimpleCaptchaModuleConfig()
         {
+            CookieCodeStoreSecretKey = string.Empty;
+            CodeExpiredInMinutes = 20;
             CodeReusable = false;
             TwistEnabled = false;
             RandomLineEnabled = true;
@@ -62,6 +65,16 @@ namespace Abp.Web.SimpleCaptcha
         /// 验证码是否可重复使用，默认false
         /// </summary>
         public bool CodeReusable { get; private set; }
+
+        /// <summary>
+        /// 验证码过期时长
+        /// </summary>
+        public int CodeExpiredInMinutes { get; private set; }
+
+        /// <summary>
+        /// 验证码存于cookie时，需配置16位加密密钥
+        /// </summary>
+        public string CookieCodeStoreSecretKey { get; private set; }
 
         public ISimpleCaptchaModuleConfig EnableCodeReusable(bool enabled)
         {
@@ -125,6 +138,49 @@ namespace Abp.Web.SimpleCaptcha
 
             CharSetExcluded = string.Join("", excludedChars);
 
+            return this;
+        }
+
+        public ISimpleCaptchaModuleConfig SetMinutesCodeExpiredIn(int minutes)
+        {
+            if (minutes < 1)
+            {
+                minutes = 1;
+            }
+
+            CodeExpiredInMinutes = minutes;
+            return this;
+        }
+
+        public ISimpleCaptchaModuleConfig SetCookieCodeStoreSecretKey(string secretKey)
+        {
+            Check.NotNullOrWhiteSpace(secretKey, nameof(secretKey));
+
+            if (secretKey.Length != 16)
+            {
+                throw new ArgumentException("请提供长度为16位的加密密钥！", nameof(secretKey));
+            }
+
+            CookieCodeStoreSecretKey = secretKey;
+
+            return this;
+        }
+
+        public ISimpleCaptchaModuleConfig UseCookieCodeStore(string secretKey)
+        {
+            IocManager.Instance.Register<IVerificationCodeStore, CookieVerificationCodeStore>();
+            return SetCookieCodeStoreSecretKey(secretKey);
+        }
+
+        public ISimpleCaptchaModuleConfig UseCacheCodeStore()
+        {
+            IocManager.Instance.Register<IVerificationCodeStore, CacheVerificationCodeStore>();
+            return this;
+        }
+
+        public ISimpleCaptchaModuleConfig UseSessionCodeStore()
+        {
+            IocManager.Instance.Register<IVerificationCodeStore, SessionVerificationCodeStore>();
             return this;
         }
     }

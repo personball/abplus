@@ -1,8 +1,7 @@
-﻿using System;
-using System.Web;
+﻿using System.Web;
 using Abp.UI;
 
-namespace Abp.Web.SimpleCaptcha
+namespace Abp.Web.SimpleCaptcha.VerificationCodeStores
 {
     public class SessionVerificationCodeStore : IVerificationCodeStore
     {

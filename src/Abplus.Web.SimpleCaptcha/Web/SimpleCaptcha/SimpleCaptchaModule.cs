@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
+using Abp.Dependency;
 using Abp.Modules;
+using Abp.Web.SimpleCaptcha.VerificationCodeStores;
 
 namespace Abp.Web.SimpleCaptcha
 {
@@ -12,6 +14,7 @@ namespace Abp.Web.SimpleCaptcha
 
         public override void Initialize()
         {
+            IocManager.RegisterIfNot<IVerificationCodeStore, SessionVerificationCodeStore>();
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
         }
     }

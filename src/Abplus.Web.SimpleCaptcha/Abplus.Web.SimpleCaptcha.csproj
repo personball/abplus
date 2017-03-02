@@ -105,10 +105,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\SimpleCaptcha\ISimpleCaptchaModuleConfig.cs" />
     <Compile Include="Web\SimpleCaptcha\IVerificationCodeStore.cs" />
-    <Compile Include="Web\SimpleCaptcha\SessionVerificationCodeStore.cs" />
     <Compile Include="Web\SimpleCaptcha\SimpleCaptchaManager.cs" />
     <Compile Include="Web\SimpleCaptcha\SimpleCaptchaModule.cs" />
     <Compile Include="Web\SimpleCaptcha\SimpleCaptchaModuleConfig.cs" />
+    <Compile Include="Web\SimpleCaptcha\VerificationCodeStores\CacheVerificationCodeStore.cs" />
+    <Compile Include="Web\SimpleCaptcha\VerificationCodeStores\CookieVerificationCodeStore.cs" />
+    <Compile Include="Web\SimpleCaptcha\VerificationCodeStores\SessionVerificationCodeStore.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.WebApiVersionRoute.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Web.SimpleCaptcha", "src\Abplus.Web.SimpleCaptcha\Abplus.Web.SimpleCaptcha.csproj", "{2AEA2117-3019-41B0-94F9-2B071B4FDEE4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{93F31708-DA27-4DF2-A228-8DFF705073BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Tests", "src\Tests\Abplus.Tests\Abplus.Tests.csproj", "{336022E3-D481-4D09-9B97-305441FF6301}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,11 +69,16 @@ Global
 		{2AEA2117-3019-41B0-94F9-2B071B4FDEE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AEA2117-3019-41B0-94F9-2B071B4FDEE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AEA2117-3019-41B0-94F9-2B071B4FDEE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{336022E3-D481-4D09-9B97-305441FF6301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336022E3-D481-4D09-9B97-305441FF6301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336022E3-D481-4D09-9B97-305441FF6301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336022E3-D481-4D09-9B97-305441FF6301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B} = {D0CE77FE-021E-4BBD-B8B5-403BB19A5547}
+		{336022E3-D481-4D09-9B97-305441FF6301} = {93F31708-DA27-4DF2-A228-8DFF705073BC}
 	EndGlobalSection
 EndGlobal

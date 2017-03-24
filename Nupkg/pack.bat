@@ -6,5 +6,6 @@ NuGet "pack" "..\src\Abplus.RebusRabbitmqProducer\Abplus.RebusRabbitmqProducer.c
 NuGet "pack" "..\src\Abplus.Web.Api\Abplus.Web.Api.csproj" -Properties Configuration=Release
 NuGet "pack" "..\src\Abplus.Web.SignalR\Abplus.Web.SignalR.csproj" -Properties Configuration=Release
 NuGet "pack" "..\src\Abplus.Web.SimpleCaptcha\Abplus.Web.SimpleCaptcha.csproj" -Properties Configuration=Release
+NuGet "pack" "..\src\Abplus.MqMessages.RebusPublisher\Abplus.MqMessages.RebusPublisher.csproj" -Properties Configuration=Release
 
 

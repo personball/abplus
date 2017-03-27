@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Tests", "src\Tests\A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusPublisher", "src\Abplus.MqMessages.RebusPublisher\Abplus.MqMessages.RebusPublisher.csproj", "{97AA3659-AE5C-4561-A4A0-51FB71144E03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.WebApiClient", "src\Abplus.WebApiClient\Abplus.WebApiClient.csproj", "{548FB369-D982-466A-B53E-18D6CA0298D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{97AA3659-AE5C-4561-A4A0-51FB71144E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97AA3659-AE5C-4561-A4A0-51FB71144E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97AA3659-AE5C-4561-A4A0-51FB71144E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{548FB369-D982-466A-B53E-18D6CA0298D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{548FB369-D982-466A-B53E-18D6CA0298D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{548FB369-D982-466A-B53E-18D6CA0298D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{548FB369-D982-466A-B53E-18D6CA0298D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

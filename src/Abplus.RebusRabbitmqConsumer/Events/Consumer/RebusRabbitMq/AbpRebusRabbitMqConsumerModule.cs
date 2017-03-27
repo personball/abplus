@@ -54,10 +54,7 @@ namespace Abp.Events.Consumer.RebusRabbitMq
                 rebusConfig.Logging(config.RebusLoggingConfig);
             }
 
-            if (RebusConfigAppend != null)
-            {
-                RebusConfigAppend(rebusConfig);
-            }
+            RebusConfigAppend?.Invoke(rebusConfig);
 
             rebusConfig.Transport(t => t.UseRabbitMq(config.ConnectionString, config.QueueName))
                 .Start();

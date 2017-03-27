@@ -252,3 +252,4 @@ paket-files/
 *.sln.iml
 /nugetpack
 /src/Abplus.Common/Configuration
+/Nupkg/nugetpush.bat

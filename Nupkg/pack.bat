@@ -8,4 +8,4 @@ NuGet "pack" "..\src\Abplus.Web.SignalR\Abplus.Web.SignalR.csproj" -Properties C
 NuGet "pack" "..\src\Abplus.Web.SimpleCaptcha\Abplus.Web.SimpleCaptcha.csproj" -Properties Configuration=Release
 NuGet "pack" "..\src\Abplus.MqMessages.RebusPublisher\Abplus.MqMessages.RebusPublisher.csproj" -Properties Configuration=Release
 NuGet "pack" "..\src\Abplus.WebApiClient\Abplus.WebApiClient.csproj" -Properties Configuration=Release
-
+NuGet "pack" "..\src\Abplus.MqMessages\Abplus.MqMessages.csproj" -Properties Configuration=Release

@@ -20,14 +20,14 @@ namespace Abp.MqMessages
 
         public void Publish(object mqMessages)
         {
-            Logger.Debug(mqMessages.ToJsonString());
+            Logger.Debug(mqMessages.GetType().FullName + ":" + mqMessages.ToJsonString());
 
             AsyncHelper.RunSync(() => _bus.Publish(mqMessages));
         }
 
         public async Task PublishAsync(object mqMessages)
         {
-            Logger.Debug(mqMessages.ToJsonString());
+            Logger.Debug(mqMessages.GetType().FullName + ":" + mqMessages.ToJsonString());
 
             await _bus.Publish(mqMessages);
         }

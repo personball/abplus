@@ -139,10 +139,9 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Abplus\Abplus.csproj">
-      <Project>{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}</Project>
+      <Project>{1de8d8d1-987d-4a9c-aec5-ff0a9914bbd4}</Project>
       <Name>Abplus</Name>
     </ProjectReference>
   </ItemGroup>

@@ -10,11 +10,26 @@ using StackExchange.Redis;
 
 namespace Abp.RealTime
 {
+    /// <summary>
+    /// 基于Redis的OnlineClientManager
+    /// </summary>
     public class RedisOnlineClientManager : IOnlineClientManager
     {
+        /// <summary>
+        /// Client 连接成功时
+        /// </summary>
         public event EventHandler<OnlineClientEventArgs> ClientConnected;
+        /// <summary>
+        /// Client断开连接时
+        /// </summary>
         public event EventHandler<OnlineClientEventArgs> ClientDisconnected;
+        /// <summary>
+        /// 用户连接成功时
+        /// </summary>
         public event EventHandler<OnlineUserEventArgs> UserConnected;
+        /// <summary>
+        /// 用户断开连接时
+        /// </summary>
         public event EventHandler<OnlineUserEventArgs> UserDisconnected;
 
         private readonly string _connectionString;
@@ -26,8 +41,14 @@ namespace Abp.RealTime
 
         private readonly object _syncObj = new object();
 
+        /// <summary>
+        /// 日志
+        /// </summary>
         public ILogger Logger { get; set; }
 
+        /// <summary>
+        /// ctor
+        /// </summary>
         public RedisOnlineClientManager()
         {
             var config = IocManager.Instance.Resolve<IRedisOnlineClientManagerModuleConfig>();
@@ -50,11 +71,19 @@ namespace Abp.RealTime
             return ConnectionMultiplexer.Connect(_connectionString);
         }
 
+        /// <summary>
+        /// 获取Redis Database
+        /// </summary>
+        /// <returns></returns>
         protected IDatabase GetDatabase()
         {
             return _connectionMultiplexer.Value.GetDatabase();
         }
 
+        /// <summary>
+        /// 添加Client
+        /// </summary>
+        /// <param name="client"></param>
         public void Add(IOnlineClient client)
         {
             lock (_syncObj)
@@ -107,9 +136,13 @@ namespace Abp.RealTime
             }
 
             userClients.Add(client.ConnectionId);
-            _database.HashSet(_storeKey, new HashEntry[] { new HashEntry(userId.ToUserIdentifierString(), userClients.ToJsonString()) });
+            _database.HashSet(_userStoreKey, new HashEntry[] { new HashEntry(userId.ToUserIdentifierString(), userClients.ToJsonString()) });
         }
 
+        /// <summary>
+        /// 获取所有Clients
+        /// </summary>
+        /// <returns></returns>
         public IReadOnlyList<IOnlineClient> GetAllClients()
         {
             lock (_syncObj)
@@ -126,6 +159,11 @@ namespace Abp.RealTime
             }
         }
 
+        /// <summary>
+        /// 根据连接id获取client
+        /// </summary>
+        /// <param name="connectionId"></param>
+        /// <returns></returns>
         public IOnlineClient GetByConnectionIdOrNull(string connectionId)
         {
             lock (_syncObj)
@@ -141,39 +179,62 @@ namespace Abp.RealTime
             }
         }
 
+        /// <summary>
+        /// 移除Client
+        /// </summary>
+        /// <param name="connectionId"></param>
+        /// <returns></returns>
         public bool Remove(string connectionId)
         {
             lock (_syncObj)
             {
-                var isRemoved = false;
                 var _database = GetDatabase();
                 var clientValue = _database.HashGet(_clientStoreKey, connectionId);
                 if (clientValue.IsNullOrEmpty)
                 {
-                    return isRemoved;
+                    return true;
                 }
 
-                _database.HashDelete(_clientStoreKey, connectionId);
-                isRemoved = true;
-
                 var client = JsonConvert.DeserializeObject<OnlineClient>(clientValue);
-
-                if (isRemoved)
+                var user = client.ToUserIdentifierOrNull();
+                if (user != null)
                 {
-                    var user = client.ToUserIdentifierOrNull();
+                    //从_userStoreKey中移除一个client
+                    var userClientsValue = _database.HashGet(_userStoreKey, user.ToUserIdentifierString());
+                    if (userClientsValue.HasValue)
+                    {
+                        var userClients = JsonConvert.DeserializeObject<List<string>>(userClientsValue);
+                        userClients.Remove(connectionId);
+                        if (userClients.Count > 0)
+                        {
+                            //更新
+                            _database.HashSet(_userStoreKey, new HashEntry[] { new HashEntry(user.ToUserIdentifierString(), userClients.ToJsonString()) });
+                        }
+                        else
+                        {
+                            //删除
+                            _database.HashDelete(_userStoreKey, user.ToUserIdentifierString());
+                        }
+                    }
 
-                    if (user != null && !IsUserOnline(user))
+                    _database.HashDelete(_clientStoreKey, connectionId);
+
+                    if (!IsUserOnline(user))
                     {
                         UserDisconnected.InvokeSafely(this, new OnlineUserEventArgs(user, client));
                     }
-
-                    ClientDisconnected.InvokeSafely(this, new OnlineClientEventArgs(client));
                 }
 
-                return isRemoved;
+                ClientDisconnected.InvokeSafely(this, new OnlineClientEventArgs(client));
+                return true;
             }
         }
 
+        /// <summary>
+        /// 获取指定user的所有clients
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public IReadOnlyList<IOnlineClient> GetAllByUserId(IUserIdentifier user)
         {
             var clients = new List<OnlineClient>();

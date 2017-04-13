@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Abp plus, an extension for Abp Framework. </description>
     <releaseNotes>upgrade version of automapper,abp etc.</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2017</copyright>
     <tags></tags>
   </metadata>
 </package>

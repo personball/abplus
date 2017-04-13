@@ -11,8 +11,8 @@
     <iconUrl>https://raw.githubusercontent.com/personball/abplus/master/abplus_icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Abp plus, an extension for Abp Framework. </description>
-    <releaseNotes>Redis Store impl for IOnlineClientManager</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2017</copyright>
     <tags></tags>
   </metadata>
 </package>

@@ -34,12 +34,22 @@ namespace Abp.MqMessages.Handlers
         {
             if (UnitOfWorkManager.Current == null)
             {
-                MqMessagePublisher.Publish(eventData.MapTo<TMqMessage>());
+                MqMessagePublisher.Publish(ConvertEventDataToMqMessage(eventData));
             }
             else
             {
-                UnitOfWorkManager.Current.Completed += (sender, e) => MqMessagePublisher.Publish(eventData.MapTo<TMqMessage>());
+                UnitOfWorkManager.Current.Completed += (sender, e) => MqMessagePublisher.Publish(ConvertEventDataToMqMessage(eventData));
             }
+        }
+
+        /// <summary>
+        /// 转换EventData为MqMessage，默认采用eventData.MapTo<TMqMessage>()
+        /// </summary>
+        /// <param name="eventData"></param>
+        /// <returns></returns>
+        public virtual TMqMessage ConvertEventDataToMqMessage(TEventData eventData)
+        {
+            return eventData.MapTo<TMqMessage>();
         }
     }
 }

@@ -253,3 +253,4 @@ paket-files/
 /nugetpack
 /src/Abplus.Common/Configuration
 /Nupkg/nugetpush.bat
+/Nupkg/push-all-packages.bat

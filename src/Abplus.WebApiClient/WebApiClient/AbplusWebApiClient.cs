@@ -49,9 +49,9 @@ namespace Abp.WebApiClient
             await GetAsync<object>(url, timeout);
         }
 
-        public async Task<TResult> GetAsync<TResult>(string url, int? timeout = null)
+        public async Task<TResult> GetAsync<TResult>(string url, int? timeout = null, bool? hasErrorCodeIf500 = null)
         {
-            return await RequestAsync<TResult>(url, null, timeout, HttpRequestMethod.GET);
+            return await RequestAsync<TResult>(url, null, timeout, HttpRequestMethod.GET, hasErrorCodeIf500);
         }
 
         public async Task PostAsync(string url, int? timeout = null)
@@ -71,11 +71,26 @@ namespace Abp.WebApiClient
 
         public async Task<TResult> PostAsync<TResult>(string url, object input, int? timeout = null) where TResult : class
         {
-            return await RequestAsync<TResult>(url, input, timeout, HttpRequestMethod.POST);
+            return await RequestAsync<TResult>(url, input, timeout, HttpRequestMethod.POST, null);
         }
 
-        private async Task<TResult> RequestAsync<TResult>(string url, object input, int? timeoutInMilliseconds = null, HttpRequestMethod method = HttpRequestMethod.POST)
+        public async Task<TResult> PostAsync<TResult>(string url, object input, int? timeout = default(int?), bool? hasErrorCodeIf500 = null)
         {
+            return await RequestAsync<TResult>(url, input, timeout, HttpRequestMethod.POST, hasErrorCodeIf500);
+        }
+
+        private async Task<TResult> RequestAsync<TResult>(
+            string url,
+            object input,
+            int? timeoutInMilliseconds = null,
+            HttpRequestMethod method = HttpRequestMethod.POST,
+            bool? hasErrorCodeIf500 = null)
+        {
+            if (!hasErrorCodeIf500.HasValue)
+            {
+                hasErrorCodeIf500 = false;
+            }
+
             //httpclient 实例
             var uri = new Uri(url);
             timeoutInMilliseconds = timeoutInMilliseconds.HasValue ? timeoutInMilliseconds : DefaultTimeoutInSeconds * 1000;
@@ -122,7 +137,7 @@ namespace Abp.WebApiClient
                     var info = string.Empty;
                     var strReturn = await response.Content.ReadAsStringAsync();
 
-                    if (!response.IsSuccessStatusCode)
+                    if (!response.IsSuccessStatusCode && !hasErrorCodeIf500.Value)
                     {
                         info = string.Format("RemoteApiCallFailed\r\n GET Url:{0}\r\n Response:{1}", url, strReturn);
                         Logger.Error(info);
@@ -145,7 +160,7 @@ namespace Abp.WebApiClient
                         var info = string.Empty;
                         var strReturn = await response.Content.ReadAsStringAsync();
 
-                        if (!response.IsSuccessStatusCode)
+                        if (!response.IsSuccessStatusCode && !hasErrorCodeIf500.Value)
                         {
                             info = string.Format("RemoteApiCallFailed\r\n POST Url:{0}\r\n,Input:{1}\r\n Response:{2}", url, input.ToJsonString(), strReturn);
                             throw new AbplusWebApiClientRemoteCallException(info);
@@ -159,7 +174,7 @@ namespace Abp.WebApiClient
                 }
             }
         }
-
+        
         /// <summary>
         /// 
         /// </summary>

@@ -1,14 +1,13 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Abp.Json;
 using Abp.Runtime.Session;
 using Abp.Threading;
 using Castle.Core.Logging;
 using Rebus.Bus;
 
-namespace Abp.MqMessages
+namespace Abp.MqMessages.Publishers
 {
-    public class RebusMqMessagePublisher : IMqMessagePublisher
+    public class RebusRabbitMqPublisher : IMqMessagePublisher
     {
         private readonly IBus _bus;
 
@@ -16,7 +15,7 @@ namespace Abp.MqMessages
 
         public IAbpSession AbpSession { get; set; }
 
-        public RebusMqMessagePublisher(IBus bus)
+        public RebusRabbitMqPublisher(IBus bus)
         {
             _bus = bus;
             Logger = NullLogger.Instance;

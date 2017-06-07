@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{97AA3659-AE5C-4561-A4A0-51FB71144E03}</ProjectGuid>
+    <ProjectGuid>{9AF821F9-8F33-489D-97E9-3BA5127320DE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Abp</RootNamespace>
-    <AssemblyName>Abplus.MqMessages.RebusPublisher</AssemblyName>
+    <AssemblyName>Abplus.MqMessages.RebusConsumer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -76,10 +76,6 @@
       <HintPath>..\..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Rebus, Version=3.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Rebus.3.1.2\lib\NET45\Rebus.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
@@ -103,19 +99,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MqMessages\RebusMqMessagePublisher.cs" />
+    <Compile Include="Configuration\Startup\RebusRabbitMqConsumerConfigurationExtensions.cs" />
+    <Compile Include="MqMessages\Consumers\IRebusRabbitMqConsumerModuleConfig.cs" />
+    <Compile Include="MqMessages\Consumers\RebusRabbitMqConsumerModule.cs" />
+    <Compile Include="MqMessages\Consumers\RebusRabbitMqConsumerModuleConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abplus\Abplus.csproj">
-      <Project>{1de8d8d1-987d-4a9c-aec5-ff0a9914bbd4}</Project>
+      <Project>{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}</Project>
       <Name>Abplus</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Abplus.MqMessages.RebusPublisher.nuspec" />
+    <None Include="Abplus.MqMessages.RebusConsumer.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

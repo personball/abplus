@@ -27,13 +27,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{93F31708
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Tests", "src\Tests\Abplus.Tests\Abplus.Tests.csproj", "{336022E3-D481-4D09-9B97-305441FF6301}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusPublisher", "src\Abplus.MqMessages.RebusPublisher\Abplus.MqMessages.RebusPublisher.csproj", "{97AA3659-AE5C-4561-A4A0-51FB71144E03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusRabbitMqPublisher", "src\Abplus.MqMessages.RebusPublisher\Abplus.MqMessages.RebusRabbitMqPublisher.csproj", "{97AA3659-AE5C-4561-A4A0-51FB71144E03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.WebApiClient", "src\Abplus.WebApiClient\Abplus.WebApiClient.csproj", "{548FB369-D982-466A-B53E-18D6CA0298D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages", "src\Abplus.MqMessages\Abplus.MqMessages.csproj", "{F0ECE646-29F7-48EB-AB40-6D238F785B73}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.EntityFramework", "src\Abplus.EntityFramework\Abplus.EntityFramework.csproj", "{4BEE8A8E-59D8-4DD4-BE1C-0DE31A348515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusRabbitMqConsumer", "src\Abplus.MqMessages.RebusConsumer\Abplus.MqMessages.RebusRabbitMqConsumer.csproj", "{9AF821F9-8F33-489D-97E9-3BA5127320DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{4BEE8A8E-59D8-4DD4-BE1C-0DE31A348515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BEE8A8E-59D8-4DD4-BE1C-0DE31A348515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BEE8A8E-59D8-4DD4-BE1C-0DE31A348515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF821F9-8F33-489D-97E9-3BA5127320DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF821F9-8F33-489D-97E9-3BA5127320DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF821F9-8F33-489D-97E9-3BA5127320DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF821F9-8F33-489D-97E9-3BA5127320DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

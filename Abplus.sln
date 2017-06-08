@@ -37,6 +37,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.EntityFramework", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusRabbitMqConsumer", "src\Abplus.MqMessages.RebusConsumer\Abplus.MqMessages.RebusRabbitMqConsumer.csproj", "{9AF821F9-8F33-489D-97E9-3BA5127320DE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MqMessagesSample", "MqMessagesSample", "{E580EAE3-1D8B-479B-ACFE-C189B46EF111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.MqMessages", "src\Samples\Sample.MqMessages\Sample.MqMessages.csproj", "{94E6D468-2D45-4EC7-AF1B-AAC884DB467F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.RebusRabbitMqConsumer", "src\Samples\Sample.RebusRabbitMqConsumer\Sample.RebusRabbitMqConsumer.csproj", "{96002B54-90BA-4CFE-AF91-149035703A98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.RebusRabbitMqPublisher", "src\Samples\Sample.RebusRabbitMqPublisher\Sample.RebusRabbitMqPublisher.csproj", "{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +111,18 @@ Global
 		{9AF821F9-8F33-489D-97E9-3BA5127320DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AF821F9-8F33-489D-97E9-3BA5127320DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AF821F9-8F33-489D-97E9-3BA5127320DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E6D468-2D45-4EC7-AF1B-AAC884DB467F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E6D468-2D45-4EC7-AF1B-AAC884DB467F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E6D468-2D45-4EC7-AF1B-AAC884DB467F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E6D468-2D45-4EC7-AF1B-AAC884DB467F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96002B54-90BA-4CFE-AF91-149035703A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96002B54-90BA-4CFE-AF91-149035703A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96002B54-90BA-4CFE-AF91-149035703A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96002B54-90BA-4CFE-AF91-149035703A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,5 +130,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9B3DE552-D101-4449-BFDE-EC8A5C149C2B} = {D0CE77FE-021E-4BBD-B8B5-403BB19A5547}
 		{336022E3-D481-4D09-9B97-305441FF6301} = {93F31708-DA27-4DF2-A228-8DFF705073BC}
+		{E580EAE3-1D8B-479B-ACFE-C189B46EF111} = {D0CE77FE-021E-4BBD-B8B5-403BB19A5547}
+		{94E6D468-2D45-4EC7-AF1B-AAC884DB467F} = {E580EAE3-1D8B-479B-ACFE-C189B46EF111}
+		{96002B54-90BA-4CFE-AF91-149035703A98} = {E580EAE3-1D8B-479B-ACFE-C189B46EF111}
+		{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F} = {E580EAE3-1D8B-479B-ACFE-C189B46EF111}
 	EndGlobalSection
 EndGlobal

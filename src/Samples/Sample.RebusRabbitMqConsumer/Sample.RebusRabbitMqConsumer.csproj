@@ -39,8 +39,16 @@
       <HintPath>..\..\..\packages\Abp.1.4.2.0\lib\net452\Abp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Abplus, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Abplus.0.1.5\lib\net461\Abplus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abplus.MqMessages.RebusRabbitMqConsumer, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Abplus.MqMessages.RebusRabbitMqConsumer.0.1.5\lib\net461\Abplus.MqMessages.RebusRabbitMqConsumer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+      <HintPath>..\..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Castle.Facilities.Logging, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
@@ -87,12 +95,28 @@
       <HintPath>..\..\..\packages\NLog.4.3.11\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Rebus, Version=3.1.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Rebus.3.1.4\lib\NET45\Rebus.dll</HintPath>
+    <Reference Include="RabbitMQ.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\RabbitMQ.Client.4.1.1\lib\net451\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rebus, Version=3.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Rebus.3.1.2\lib\NET45\Rebus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rebus.CastleWindsor, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Rebus.Castle.Windsor.3.0.0\lib\NET45\Rebus.CastleWindsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rebus.NewtonsoftJson, Version=3.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Rebus.NewtonsoftJson.3.1.2\lib\NET45\Rebus.NewtonsoftJson.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rebus.NLog, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Rebus.NLog.3.0.0\lib\NET45\Rebus.NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rebus.RabbitMq, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Rebus.RabbitMq.3.0.0\lib\NET452\Rebus.RabbitMq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -146,10 +170,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\Abplus.MqMessages.RebusConsumer\Abplus.MqMessages.RebusRabbitMqConsumer.csproj">
-      <Project>{9af821f9-8f33-489d-97e9-3ba5127320de}</Project>
-      <Name>Abplus.MqMessages.RebusRabbitMqConsumer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sample.MqMessages\Sample.MqMessages.csproj">
       <Project>{94E6D468-2D45-4EC7-AF1B-AAC884DB467F}</Project>
       <Name>Sample.MqMessages</Name>

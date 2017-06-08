@@ -4,6 +4,7 @@ using Abp.Modules;
 using Abp.MqMessages.Publishers;
 using Abp.Threading.BackgroundWorkers;
 using Castle.Facilities.Logging;
+using Rebus.NLog;
 using Sample.BackgroundWorks;
 
 namespace Sample
@@ -14,6 +15,7 @@ namespace Sample
         public override void PreInitialize()
         {
             Configuration.Modules.UseAbplusRebusRabbitMqPublisher()
+                .UseLogging(c => c.NLog())
                 .ConnectionTo("amqp://dev:dev@rabbitmq.local.jk724.cn/dev_host");
 
             Configuration.BackgroundJobs.IsJobExecutionEnabled = true;

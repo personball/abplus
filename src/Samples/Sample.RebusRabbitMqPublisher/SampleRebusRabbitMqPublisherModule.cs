@@ -15,12 +15,15 @@ namespace Sample
         {
             Configuration.Modules.UseAbplusRebusRabbitMqPublisher()
                 .ConnectionTo("amqp://dev:dev@rabbitmq.local.jk724.cn/dev_host");
+
             Configuration.BackgroundJobs.IsJobExecutionEnabled = true;
         }
+
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
         }
+
         public override void PostInitialize()
         {
             Abp.Dependency.IocManager.Instance.IocContainer.AddFacility<LoggingFacility>(f => f.UseNLog().WithConfig("nlog.config"));

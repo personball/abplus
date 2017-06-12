@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Threading.Tasks;
 using Castle.DynamicProxy;
 
@@ -7,28 +6,35 @@ namespace Abp.Interceptors
 {
     public abstract class AsyncHandlingInterceptor : IInterceptor
     {
-        protected readonly IInterceptorHandler Handler;
+        protected readonly IAsyncInterceptorHandler Handler;
         private static readonly MethodInfo HandleAsyncMethodInfo = typeof(AsyncHandlingInterceptor).GetMethod("HandleAsyncWithResult", BindingFlags.Instance | BindingFlags.NonPublic);
 
-        protected AsyncHandlingInterceptor(IInterceptorHandler handler)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="handler"></param>
+        protected AsyncHandlingInterceptor(IAsyncInterceptorHandler handler)
         {
             Handler = handler;
         }
+
         public void Intercept(IInvocation invocation)
         {
             var delegateType = GetDelegateType(invocation);
             if (delegateType == MethodType.Synchronous)
             {
-                Handle(() => invocation.Proceed());
+                Handler.Handle(invocation);
+                //Handle(() => invocation.Proceed());
             }
             if (delegateType == MethodType.AsyncAction)
             {
-                invocation.Proceed();
-                invocation.ReturnValue = HandleAsync((Task)invocation.ReturnValue);
+                Handler.HandleAsync(invocation);
+                //invocation.Proceed();
+                //invocation.ReturnValue = HandleAsync((Task)invocation.ReturnValue);
             }
             if (delegateType == MethodType.AsyncFunction)
             {
-                invocation.Proceed();
+                //invocation.Proceed();
                 ExecuteHandleAsyncWithResultUsingReflection(invocation);
             }
         }
@@ -36,22 +42,18 @@ namespace Abp.Interceptors
         {
             var resultType = invocation.Method.ReturnType.GetGenericArguments()[0];
             var mi = HandleAsyncMethodInfo.MakeGenericMethod(resultType);
-            invocation.ReturnValue = mi.Invoke(this, new[] { invocation.ReturnValue });
+            invocation.ReturnValue = mi.Invoke(this, new[] { invocation });
         }
 
-        protected virtual void Handle(Action invocation)
+        /// <summary>
+        /// Used by Reflection
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="invocation"></param>
+        /// <returns></returns>
+        protected virtual async Task<T> HandleAsyncWithResult<T>(IInvocation invocation)
         {
-            Handler.Handle(invocation);
-        }
-
-        protected virtual async Task HandleAsync(Task task)
-        {
-            await Handler.Handle(async () => await task);
-        }
-
-        protected virtual async Task<T> HandleAsyncWithResult<T>(Task<T> task)
-        {
-            return await Handler.Handle(async () => await task);
+            return await Handler.HandleAsync<T>(invocation);
         }
 
         private MethodType GetDelegateType(IInvocation invocation)

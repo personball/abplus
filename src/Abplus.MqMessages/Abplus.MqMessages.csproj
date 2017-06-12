@@ -107,8 +107,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\Startup\ExceptionLogInterceptorRegistrar.cs" />
     <Compile Include="MqMessages\AutoMapper\AutoEventsMapToMqMessagesHelper.cs" />
     <Compile Include="MqMessages\Handlers\EventDataPublishHandlerBase.cs" />
+    <Compile Include="MqMessages\MqHandlers\AbpMqHandlerBase.cs" />
+    <Compile Include="MqMessages\MqHandlers\ExceptionLoggling\ExceptionLogAttribute.cs" />
+    <Compile Include="MqMessages\MqHandlers\ExceptionLoggling\ExceptionLogHandler.cs" />
+    <Compile Include="MqMessages\MqHandlers\ExceptionLoggling\ExceptionLogInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,7 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abplus\Abplus.csproj">
-      <Project>{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}</Project>
+      <Project>{1de8d8d1-987d-4a9c-aec5-ff0a9914bbd4}</Project>
       <Name>Abplus</Name>
     </ProjectReference>
   </ItemGroup>

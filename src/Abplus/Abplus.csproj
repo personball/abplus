@@ -119,7 +119,7 @@
     <Compile Include="Extensions\NullableDateTimeExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Interceptors\AsyncHandlingInterceptor.cs" />
-    <Compile Include="Interceptors\IInterceptorHandler.cs" />
+    <Compile Include="Interceptors\IAsyncInterceptorHandler.cs" />
     <Compile Include="Json\LargeNumJsonConverter.cs" />
     <Compile Include="MqMessages\IMqMessagePublisher.cs" />
     <Compile Include="MqMessages\NullMqMessagePublisher.cs" />

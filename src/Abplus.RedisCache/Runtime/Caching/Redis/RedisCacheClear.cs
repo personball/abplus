@@ -3,7 +3,6 @@ using Abp.Application.Services.Dto;
 using Abp.Dependency;
 using Abp.Domain.Entities;
 using Abp.Events.Bus.Entities;
-using Boss.EAM.Runtime.Caching;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +22,6 @@ namespace Abp.Runtime.Caching.Redis
         {
             var _database = RedisManager._redis.GetDatabase(databaseId);
             _database.KeyDeleteWithPrefix(fullkey);
-        }
-
-        public void Dispose()
-        {
         }
     }
 }

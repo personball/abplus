@@ -15,4 +15,7 @@
     <copyright>Copyright 2017</copyright>
     <tags></tags>
   </metadata>
+  <files>
+    <file src="bin\$configuration$\$id$.pdb" target="lib\net452\" />
+  </files>
 </package>

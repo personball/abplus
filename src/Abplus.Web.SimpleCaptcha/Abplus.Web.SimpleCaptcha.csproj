@@ -113,7 +113,12 @@
     <Compile Include="Web\SimpleCaptcha\VerificationCodeStores\CookieVerificationCodeStore.cs" />
     <Compile Include="Web\SimpleCaptcha\VerificationCodeStores\SessionVerificationCodeStore.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Abplus\Abplus.csproj">
+      <Project>{1de8d8d1-987d-4a9c-aec5-ff0a9914bbd4}</Project>
+      <Name>Abplus</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Abplus.Web.SimpleCaptcha.nuspec" />
     <None Include="packages.config" />

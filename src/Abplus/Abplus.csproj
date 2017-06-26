@@ -106,6 +106,7 @@
     <Compile Include="Application\Services\Dto\IPaginationResultRequest.cs" />
     <Compile Include="Application\Services\Dto\PaginationRequestInput.cs" />
     <Compile Include="Currencies\ChineseCentExtension.cs" />
+    <Compile Include="Domain\Repositories\Ext\IRepository.cs" />
     <Compile Include="Events\Bus\ChangedEventData.cs" />
     <Compile Include="Events\Bus\IShouldBePublish.cs" />
     <Compile Include="Exceptions\Publish\AbpExceptionPublishAttribute.cs" />

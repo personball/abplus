@@ -16,9 +16,7 @@
     <tags></tags>
     <dependencies>
       <dependency id="Abplus" version="$version$" />
-      <dependency id="Abplus.MqMessages.RebusCore" version="$version$"/>
-      <dependency id="Rebus.Castle.Windsor" version="3.0.0" />
-      <dependency id="Rebus.RabbitMq" version="3.0.0" />
+      <dependency id="Rebus" version="3.1.2" />
     </dependencies>
   </metadata>
 </package>

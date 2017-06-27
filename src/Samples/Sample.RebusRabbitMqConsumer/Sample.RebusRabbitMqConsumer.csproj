@@ -39,12 +39,16 @@
       <HintPath>..\..\..\packages\Abp.1.4.2.0\lib\net452\Abp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abplus, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Abplus.0.1.5\lib\net461\Abplus.dll</HintPath>
+    <Reference Include="Abplus, Version=0.1.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Abplus.0.1.6\lib\net461\Abplus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abplus.MqMessages.RebusRabbitMqConsumer, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Abplus.MqMessages.RebusRabbitMqConsumer.0.1.5\lib\net461\Abplus.MqMessages.RebusRabbitMqConsumer.dll</HintPath>
+    <Reference Include="Abplus.MqMessages.RebusCore, Version=0.1.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Abplus.MqMessages.RebusCore.0.1.6\lib\net461\Abplus.MqMessages.RebusCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abplus.MqMessages.RebusRabbitMqConsumer, Version=0.1.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Abplus.MqMessages.RebusRabbitMqConsumer.0.1.6\lib\net461\Abplus.MqMessages.RebusRabbitMqConsumer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">

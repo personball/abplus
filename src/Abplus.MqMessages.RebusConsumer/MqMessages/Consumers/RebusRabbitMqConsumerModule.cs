@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Abp.Modules;
+using Abp.MqMessages.Publishers;
 using Rebus.Auditing.Messages;
 using Rebus.Bus;
 using Rebus.CastleWindsor;
@@ -18,6 +19,7 @@ namespace Abp.MqMessages.Consumers
         public override void PreInitialize()
         {
             IocManager.Register<IRebusRabbitMqConsumerModuleConfig, RebusRabbitMqConsumerModuleConfig>();
+            IocManager.Register<IMqMessagePublisher, RebusRabbitMqPublisher>();
         }
 
         public override void Initialize()

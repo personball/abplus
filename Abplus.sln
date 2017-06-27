@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.RebusRabbitMqConsume
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.RebusRabbitMqPublisher", "src\Samples\Sample.RebusRabbitMqPublisher\Sample.RebusRabbitMqPublisher.csproj", "{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusCore", "src\Abplus.MqMessages.RebusCore\Abplus.MqMessages.RebusCore.csproj", "{220D5F17-F49B-4A66-B2EE-CF107EF0D9BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{220D5F17-F49B-4A66-B2EE-CF107EF0D9BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220D5F17-F49B-4A66-B2EE-CF107EF0D9BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220D5F17-F49B-4A66-B2EE-CF107EF0D9BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220D5F17-F49B-4A66-B2EE-CF107EF0D9BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,5 +11,6 @@ NuGet "pack" "..\src\Abplus.MqMessages\Abplus.MqMessages.csproj" -Properties Con
 NuGet "pack" "..\src\Abplus.MqMessages.RebusConsumer\Abplus.MqMessages.RebusRabbitMqConsumer.csproj" -Properties Configuration=Release
 NuGet "pack" "..\src\Abplus.MqMessages.RebusPublisher\Abplus.MqMessages.RebusRabbitMqPublisher.csproj" -Properties Configuration=Release
 NuGet "pack" "..\src\Abplus.EntityFramework\Abplus.EntityFramework.csproj" -Properties Configuration=Release
+NuGet "pack" "..\src\Abplus.MqMessages.RebusCore\Abplus.MqMessages.RebusCore.csproj" -Properties Configuration=Release
 
 pause

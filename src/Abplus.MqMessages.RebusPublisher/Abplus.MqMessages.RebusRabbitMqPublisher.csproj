@@ -117,12 +117,15 @@
   <ItemGroup>
     <Compile Include="Configuration\Startup\RebusRabbitMqPublisherConfigurationExtensions.cs" />
     <Compile Include="MqMessages\Publishers\IRebusRabbitMqPublisherModuleConfig.cs" />
-    <Compile Include="MqMessages\Publishers\RebusRabbitMqPublisher.cs" />
     <Compile Include="MqMessages\Publishers\RebusRabbitMqPublisherModule.cs" />
     <Compile Include="MqMessages\Publishers\RebusRabbitMqPublisherModuleConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Abplus.MqMessages.RebusCore\Abplus.MqMessages.RebusCore.csproj">
+      <Project>{220d5f17-f49b-4a66-b2ee-cf107ef0d9be}</Project>
+      <Name>Abplus.MqMessages.RebusCore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Abplus\Abplus.csproj">
       <Project>{1de8d8d1-987d-4a9c-aec5-ff0a9914bbd4}</Project>
       <Name>Abplus</Name>

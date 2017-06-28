@@ -1,34 +1,21 @@
-﻿using Abp.Application.Services.Dto;
-using Abp.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
+using Abp.Domain.Entities;
+using Abp.Domain.Repositories;
+using JetBrains.Annotations;
 
-namespace Abp.Domain.Repositories.Ext
+namespace Abp.Domain.Repositories
 {
     /// <summary>
-    /// 扩展 IRepository 继承于  Abp.Domain.Repositories.IRepository
+    ///     Dapper repository abstraction interface.
     /// </summary>
-    /// <typeparam name="TEntity">Main Entity type this repository works on</typeparam>
-    public interface IRepository<TEntity> : IRepository<TEntity, int>
-            where TEntity : class, IEntity<int>
+    /// <typeparam name="TEntity">The type of the entity.</typeparam>
+    /// <typeparam name="TPrimaryKey">The type of the primary key.</typeparam>
+    /// <seealso cref="IDapperRepository{TEntity,TPrimaryKey}" />
+    public interface IDapperRepository<TEntity, TPrimaryKey> : IRepository where TEntity : class, IEntity<TPrimaryKey>
     {
-
-    }
-    /// <summary>
-    /// 扩展 IRepository 继承于  Abp.Domain.Repositories.IRepository
-    /// </summary>
-    /// <typeparam name="TEntity">Main Entity type this repository works on</typeparam>
-    /// <typeparam name="TPrimaryKey">Primary key type of the entity</typeparam>
-    public interface IRepository<TEntity, TPrimaryKey> : Repositories.IRepository<TEntity, TPrimaryKey>
-            where TEntity : class, IEntity<TPrimaryKey>
-    {
-        #region Dapper
         /// <summary>
         ///     Queries the specified query.
         /// </summary>
@@ -74,25 +61,7 @@ namespace Abp.Domain.Repositories.Ext
         /// <param name="parameters">The parameters.</param>
         /// <returns></returns>
         Task<IEnumerable<TAny>> QueryAsync<TAny>(string query, List<object> parameters);
-        #endregion
 
-        #region InsertOrUpdate
-        /// <summary>
-        /// 新增或者修改
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <param name="updateAction"></param>
-        /// <param name="insertFunc"></param>
-        /// <returns></returns>
-        TEntity InsertOrUpdate(Expression<Func<TEntity, bool>> predicate, Action<TEntity> updateAction, Func<TEntity> insertFunc);
-        /// <summary>
-        /// 新增或者修改 获取Id
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <param name="updateAction"></param>
-        /// <param name="insertFunc"></param>
-        /// <returns></returns>
-        TPrimaryKey InsertOrUpdateAndGetId(Expression<Func<TEntity, bool>> predicate, Action<TEntity> updateAction, Func<TEntity> insertFunc);
-        #endregion
+
     }
 }

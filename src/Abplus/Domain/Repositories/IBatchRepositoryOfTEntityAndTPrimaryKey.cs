@@ -18,25 +18,7 @@ namespace Abp.Domain.Repositories
         /// <param name="entities">entities</param>
         /// <returns></returns>
         Task<IEnumerable<TEntity>> BatchInsertAsync(IEnumerable<TEntity> entities);
-
-        int BatchUpdate(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TEntity>> updateExpression);
-
-        /// <summary>
-        /// Batch update, Notice : You can not use Effort.EF6 to test, you must use a real database.
-        /// </summary>
-        /// <param name="predicate">predicate</param>
-        /// <param name="updateExpression">update expression</param>
-        /// <returns></returns>
-        Task<int> BatchUpdateAsync(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TEntity>> updateExpression);
-
-        int BatchDelete(Expression<Func<TEntity, bool>> predicate);
-
-        /// <summary>
-        /// Batch delete, Notice : You can not use Effort.EF6 to test, you must use a real database.
-        /// </summary>
-        /// <param name="predicate">predicate</param>
-        /// <returns></returns>
-        Task<int> BatchDeleteAsync(Expression<Func<TEntity, bool>> predicate);
+      
 
         /// <summary>
         /// 新增或者修改

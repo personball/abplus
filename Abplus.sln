@@ -47,6 +47,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.RebusRabbitMqPublish
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusCore", "src\Abplus.MqMessages.RebusCore\Abplus.MqMessages.RebusCore.csproj", "{220D5F17-F49B-4A66-B2EE-CF107EF0D9BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.AuditingStore", "src\Abplus.MqMessages.AuditingStore\Abplus.MqMessages.AuditingStore.csproj", "{B1585B83-25A5-4C8C-A384-B1205E459C16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuditingConsumerSample", "AuditingConsumerSample", "{FF42F7C2-82F8-4753-AF96-5C024F4688AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.BaseServices", "src\Samples\Sample.BaseServices\Sample.BaseServices.csproj", "{47F51AAC-EF6A-4A66-A125-D819A9E3F675}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +135,14 @@ Global
 		{220D5F17-F49B-4A66-B2EE-CF107EF0D9BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{220D5F17-F49B-4A66-B2EE-CF107EF0D9BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{220D5F17-F49B-4A66-B2EE-CF107EF0D9BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1585B83-25A5-4C8C-A384-B1205E459C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1585B83-25A5-4C8C-A384-B1205E459C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1585B83-25A5-4C8C-A384-B1205E459C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1585B83-25A5-4C8C-A384-B1205E459C16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47F51AAC-EF6A-4A66-A125-D819A9E3F675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47F51AAC-EF6A-4A66-A125-D819A9E3F675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47F51AAC-EF6A-4A66-A125-D819A9E3F675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47F51AAC-EF6A-4A66-A125-D819A9E3F675}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,5 +154,7 @@ Global
 		{94E6D468-2D45-4EC7-AF1B-AAC884DB467F} = {E580EAE3-1D8B-479B-ACFE-C189B46EF111}
 		{96002B54-90BA-4CFE-AF91-149035703A98} = {E580EAE3-1D8B-479B-ACFE-C189B46EF111}
 		{DB9B68CD-6868-4E94-9A94-6A9E70D7C48F} = {E580EAE3-1D8B-479B-ACFE-C189B46EF111}
+		{FF42F7C2-82F8-4753-AF96-5C024F4688AE} = {D0CE77FE-021E-4BBD-B8B5-403BB19A5547}
+		{47F51AAC-EF6A-4A66-A125-D819A9E3F675} = {FF42F7C2-82F8-4753-AF96-5C024F4688AE}
 	EndGlobalSection
 EndGlobal

@@ -104,17 +104,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MqMessages\Publishers\RebusRabbitMqPublisher.cs" />
+    <Compile Include="MqMessages\Publishers\RebusRabbitMqPublisherCoreModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Abplus\Abplus.csproj">
-      <Project>{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}</Project>
-      <Name>Abplus</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Abplus.MqMessages.RebusCore.nuspec" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abplus\Abplus.csproj">
+      <Project>{1de8d8d1-987d-4a9c-aec5-ff0a9914bbd4}</Project>
+      <Name>Abplus</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

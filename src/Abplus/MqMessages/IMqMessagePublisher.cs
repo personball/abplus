@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
-
+using Abp.Dependency;
 namespace Abp.MqMessages
 {
     /// <summary>
     /// 消息发布接口
     /// </summary>
-    public interface IMqMessagePublisher
+    public interface IMqMessagePublisher : ITransientDependency
     {
         /// <summary>
         /// 发布

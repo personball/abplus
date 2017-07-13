@@ -15,7 +15,7 @@
     <copyright>Copyright 2017</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="Abplus" version="$version$" />
+      <dependency id="Abplus.MqMessages.RebusCore" version="$version$" />
     </dependencies>
   </metadata>
 </package>

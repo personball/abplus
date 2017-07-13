@@ -1,16 +1,20 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Abp.Dependency;
 using Abp.MqMessages;
 
-namespace Abp.Auditing.AuditingStore
+namespace Abp.Auditing.AuditingStores
 {
     public class MqMessageAuditingStore : IAuditingStore, ITransientDependency
     {
-        public IMqMessagePublisher MqMessagePublisher { get; set; }
+        private readonly Lazy<IMqMessagePublisher> MqMessagePublisher;//why this need Lazy<>?
 
         public MqMessageAuditingStore()
         {
-            MqMessagePublisher = NullMqMessagePublisher.Instance;
+            MqMessagePublisher = new Lazy<IMqMessagePublisher>(() =>
+            {
+                return IocManager.Instance.Resolve<IMqMessagePublisher>();
+            });
         }
 
         public async Task SaveAsync(AuditInfo auditInfo)
@@ -41,7 +45,7 @@ namespace Abp.Auditing.AuditingStore
                 }
             }
 
-            await MqMessagePublisher.PublishAsync(mqMsgAuditInfo);
+            await MqMessagePublisher.Value.PublishAsync(mqMsgAuditInfo);
         }
     }
 }

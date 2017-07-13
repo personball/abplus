@@ -6,6 +6,7 @@ using Rebus.Config;
 
 namespace Abp.MqMessages.Publishers
 {
+    [DependsOn(typeof(RebusRabbitMqPublisherCoreModule))]
     public class RebusRabbitMqPublisherModule : AbpModule
     {
         private IBus _bus;
@@ -13,7 +14,6 @@ namespace Abp.MqMessages.Publishers
         public override void PreInitialize()
         {
             IocManager.Register<IRebusRabbitMqPublisherModuleConfig, RebusRabbitMqPublisherModuleConfig>();
-            IocManager.Register<IMqMessagePublisher, RebusRabbitMqPublisher>();
         }
 
         public override void Initialize()

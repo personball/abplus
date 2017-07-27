@@ -38,10 +38,12 @@ namespace Abp.Auditing.AuditingStores
 
             if (auditInfo.Exception != null)
             {
-                mqMsgAuditInfo.Exception = auditInfo.Exception.Message + " " + auditInfo.Exception.StackTrace;
+                mqMsgAuditInfo.CustomData += $" {auditInfo.Exception.Message}";
+                mqMsgAuditInfo.Exception = auditInfo.Exception.StackTrace;
                 if (auditInfo.Exception.InnerException != null)
                 {
-                    mqMsgAuditInfo.Exception =auditInfo.Exception.InnerException.Message+" "+ auditInfo.Exception.InnerException.StackTrace;
+                    mqMsgAuditInfo.CustomData += $" {auditInfo.Exception.InnerException.Message}";
+                    mqMsgAuditInfo.Exception = auditInfo.Exception.InnerException.StackTrace;
                 }
             }
 

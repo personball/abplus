@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbplusConsts.cs" />
+    <Compile Include="Application\Navigation\MenuItemDefinitionPlugInExtensions.cs" />
     <Compile Include="Application\Services\Dto\IHasDateTimeFilterRequest.cs" />
     <Compile Include="Application\Services\Dto\IHasKeywordFilterRequest.cs" />
     <Compile Include="Application\Services\Dto\IPaginationResultRequest.cs" />

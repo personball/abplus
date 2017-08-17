@@ -31,8 +31,7 @@ namespace Abp.Web.Mvc
             var autoLoadTypes = _abpPlugInManager.PlugInSources.GetAllModules().Select(m => m.Assembly).Distinct().ToList()
                 .SelectMany(a => a.GetTypes())
                 .Where(t => t != null && t.IsPublic && !t.IsAbstract
-                && (typeof(IPlugInAreaRegistration).IsAssignableFrom(t))
-                || typeof(IPlugInAuthorizationProvider).IsAssignableFrom(t))
+                && (typeof(IPlugInAreaRegistration).IsAssignableFrom(t)))
                 .ToList();
 
             //Auto Load IPlugInAreaRegistration
@@ -55,22 +54,25 @@ namespace Abp.Web.Mvc
                 instance.RegisterArea(context);
             }
 
-            //Auto Load IPlugInAuthorizationProvider Permissions Must Load in PreInit
-            foreach (var item in autoLoadTypes.Where(t => typeof(IPlugInAuthorizationProvider).IsAssignableFrom(t)))
-            {
-                Configuration.Authorization.Providers.Add(item);
-            }
+
         }
 
         public override void PostInitialize()
         {
             ControllerBuilder.Current.SetControllerFactory(new PlugInWindsorControllerFactory(IocManager, IocManager.Resolve<IAbpPlugInManager>()));
-
+            
             var autoLoadTypes = _abpPlugInManager.PlugInSources.GetAllModules().Select(m => m.Assembly).Distinct().ToList()
                 .SelectMany(a => a.GetTypes())
                 .Where(t => t != null && t.IsPublic && !t.IsAbstract
-                && (typeof(IPlugInNavigationProvider).IsAssignableFrom(t))
+                && (typeof(IPlugInAuthorizationProvider).IsAssignableFrom(t)
+                   || typeof(IPlugInNavigationProvider).IsAssignableFrom(t))
                 ).ToList();
+
+            //Auto Load IPlugInAuthorizationProvider
+            foreach (var item in autoLoadTypes.Where(t => typeof(IPlugInAuthorizationProvider).IsAssignableFrom(t)))
+            {
+                Configuration.Authorization.Providers.Add(item);
+            }
 
             //Auto Load IPlugInNavigationProvider， Menu Should Load After the PlugIn's Host
             foreach (var item in autoLoadTypes.Where(t => typeof(IPlugInNavigationProvider).IsAssignableFrom(t)))

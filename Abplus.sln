@@ -3,13 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Events.Producer", "src\Abplus.Events.Producer\Abplus.Events.Producer.csproj", "{E9957D88-655D-4411-98C3-C7D6009BA13C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus", "src\Abplus\Abplus.csproj", "{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.RebusRabbitmqConsumer", "src\Abplus.RebusRabbitmqConsumer\Abplus.RebusRabbitmqConsumer.csproj", "{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.RebusRabbitmqProducer", "src\Abplus.RebusRabbitmqProducer\Abplus.RebusRabbitmqProducer.csproj", "{17DC37E5-6756-4462-AF34-674738762F0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Common", "src\Abplus.Common\Abplus.Common.csproj", "{2C69763F-3880-4D4D-8E14-A0D3A2B2B4F8}"
 EndProject
@@ -55,30 +49,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.BaseServices", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RedisStoreMessageTracker", "src\Abplus.MqMessages.RedisStoreMessageTracker\Abplus.MqMessages.RedisStoreMessageTracker.csproj", "{0F4D2D6F-801A-49A5-8B17-1E188CA0C6F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Web.PlugIns", "src\Abplus.Web.PlugIns\Abplus.Web.PlugIns.csproj", "{E834592D-71F9-49A4-A4FB-017A83712255}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E9957D88-655D-4411-98C3-C7D6009BA13C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9957D88-655D-4411-98C3-C7D6009BA13C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9957D88-655D-4411-98C3-C7D6009BA13C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9957D88-655D-4411-98C3-C7D6009BA13C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DE8D8D1-987D-4A9C-AEC5-FF0A9914BBD4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32E6558A-DCDB-434C-B683-0EC88F1CEEAD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17DC37E5-6756-4462-AF34-674738762F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17DC37E5-6756-4462-AF34-674738762F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17DC37E5-6756-4462-AF34-674738762F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17DC37E5-6756-4462-AF34-674738762F0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2C69763F-3880-4D4D-8E14-A0D3A2B2B4F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2C69763F-3880-4D4D-8E14-A0D3A2B2B4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C69763F-3880-4D4D-8E14-A0D3A2B2B4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -151,10 +131,6 @@ Global
 		{0F4D2D6F-801A-49A5-8B17-1E188CA0C6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F4D2D6F-801A-49A5-8B17-1E188CA0C6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F4D2D6F-801A-49A5-8B17-1E188CA0C6F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E834592D-71F9-49A4-A4FB-017A83712255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E834592D-71F9-49A4-A4FB-017A83712255}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E834592D-71F9-49A4-A4FB-017A83712255}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E834592D-71F9-49A4-A4FB-017A83712255}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

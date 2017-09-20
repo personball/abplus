@@ -6,7 +6,7 @@ namespace Abplus.WebApiVersionRoute.RoutingConstraints
     public class VersionedRoute : RouteFactoryAttribute
     {
         private static string DefaultAllowedClientVersionRange = VersionConsts.DefaultClientMinVersionString + "-" + VersionConsts.DefaultClientMaxVersionString;
-        private static SysCode DefaultAllowedSysCode = SysCode.H5 | SysCode.IPhone | SysCode.Andriod;
+        private static SysCode DefaultAllowedSysCode = SysCode.H5 | SysCode.IPhone | SysCode.Android;
         private const int DefaultAllowedApiVersion = 1;
 
         #region 构造函数

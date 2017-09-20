@@ -44,7 +44,7 @@ namespace Abplus.WebApiVersionRoute.Sample.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [VersionedRoute("api/value/bySysCode", 1, SysCode.IPhone|SysCode.Andriod)]
+        [VersionedRoute("api/value/bySysCode", 1, SysCode.IPhone|SysCode.Android)]
         public async Task<string> bySysCodeNotH5()
         {
             return "SysCode.IPhone|SysCode.Andriod";

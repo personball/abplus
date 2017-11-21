@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.BaseServices", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RedisStoreMessageTracker", "src\Abplus.MqMessages.RedisStoreMessageTracker\Abplus.MqMessages.RedisStoreMessageTracker.csproj", "{0F4D2D6F-801A-49A5-8B17-1E188CA0C6F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.T4.PermissionsFromJson", "src\Abplus.T4.PermissionsFromJson\Abplus.T4.PermissionsFromJson.csproj", "{84127C3A-3C37-4BB1-BCCD-AB62C3E2FE3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +133,10 @@ Global
 		{0F4D2D6F-801A-49A5-8B17-1E188CA0C6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F4D2D6F-801A-49A5-8B17-1E188CA0C6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F4D2D6F-801A-49A5-8B17-1E188CA0C6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84127C3A-3C37-4BB1-BCCD-AB62C3E2FE3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84127C3A-3C37-4BB1-BCCD-AB62C3E2FE3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84127C3A-3C37-4BB1-BCCD-AB62C3E2FE3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84127C3A-3C37-4BB1-BCCD-AB62C3E2FE3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

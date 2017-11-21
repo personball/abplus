@@ -16,6 +16,7 @@ Abp plus, an extension for Abp Framework.
 |Abplus.MqMessages.RedisStoreMessageTracker|[![NuGet version](https://badge.fury.io/nu/Abplus.MqMessages.RedisStoreMessageTracker.svg)](https://badge.fury.io/nu/Abplus.MqMessages.RedisStoreMessageTracker)|
 |Abplus.Web.Api|[![NuGet version](https://badge.fury.io/nu/Abplus.Web.Api.svg)](https://badge.fury.io/nu/Abplus.Web.Api)|
 |Abplus.Web.SignalR|[![NuGet version](https://badge.fury.io/nu/Abplus.Web.SignalR.svg)](https://badge.fury.io/nu/Abplus.Web.SignalR)|
+|Abplus.T4.PermissionsFromJson|[![NuGet version](https://badge.fury.io/nu/Abplus.T4.PermissionsFromJson.svg)](https://badge.fury.io/nu/Abplus.T4.PermissionsFromJson)|
 
 ## Remarks
 
@@ -31,7 +32,10 @@ Abp plus, an extension for Abp Framework.
 |Abplus.MqMessages.RedisStoreMessageTracker|集成消息队列的扩展方案，消费端消费行为的幂等支持|
 |Abplus.Web.Api|WebApi基于请求头的版本化机制，使用方法见Samples/Abplus.WebApiVersionRoute.Sample。|
 |Abplus.Web.SignalR|基于Redis的OnlineClientManager，解决Abp自带的[OnlineClientManager](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/RealTime/OnlineClientManager.cs#L26)在线状态不跨进程共享的问题。|
+|Abplus.T4.PermissionsFromJson|提供T4工具，自动从Json文件定义中生成权限定义和权限树|
 
 ## License
 
 [MIT](LICENSE)
+
+![Which_LICENSE](https://github.com/personball/abplus/blob/master/Which_LICENSE.jpg?raw=true)

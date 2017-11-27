@@ -30,7 +30,7 @@
 					 tempateManager.StartNewFile(item.Key+"Permissions.cs");
 				
 				#>
-namespace Boss.Ecom.Authorization
+namespace 【YourCompany.YourProject】.Authorization
 {
     /// <summary>
     /// Permissions definition

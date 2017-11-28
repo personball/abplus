@@ -29,5 +29,7 @@ NuGet "pack" "..\src\Abplus.MqMessages.RedisStoreMessageTracker\Abplus.MqMessage
 
 NuGet "pack" "..\src\Abplus.T4.PermissionsFromJson\Abplus.T4.PermissionsFromJson.csproj" -Properties Configuration=Release
 
+NuGet "pack" "..\src\Abplus.MqMessages.IndexToES\Abplus.MqMessages.IndexToES.csproj" -Properties Configuration=Release
+
 
 pause

@@ -17,7 +17,7 @@ Abp plus, an extension for Abp Framework.
 |Abplus.Web.Api|[![NuGet version](https://badge.fury.io/nu/Abplus.Web.Api.svg)](https://badge.fury.io/nu/Abplus.Web.Api)|
 |Abplus.Web.SignalR|[![NuGet version](https://badge.fury.io/nu/Abplus.Web.SignalR.svg)](https://badge.fury.io/nu/Abplus.Web.SignalR)|
 |Abplus.T4.PermissionsFromJson|[![NuGet version](https://badge.fury.io/nu/Abplus.T4.PermissionsFromJson.svg)](https://badge.fury.io/nu/Abplus.T4.PermissionsFromJson)|
-
+|Abplus.MqMessages.IndexToES|[![NuGet version](https://badge.fury.io/nu/Abplus.MqMessages.IndexToES.svg)](https://badge.fury.io/nu/Abplus.MqMessages.IndexToES)|
 ## Remarks
 
 |Package|Remark|
@@ -33,6 +33,8 @@ Abp plus, an extension for Abp Framework.
 |Abplus.Web.Api|WebApi基于请求头的版本化机制，使用方法见Samples/Abplus.WebApiVersionRoute.Sample。|
 |Abplus.Web.SignalR|基于Redis的OnlineClientManager，解决Abp自带的[OnlineClientManager](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/RealTime/OnlineClientManager.cs#L26)在线状态不跨进程共享的问题。|
 |Abplus.T4.PermissionsFromJson|提供T4工具，自动从Json文件定义中生成权限定义和权限树|
+|Abplus.MqMessages.IndexToES|提供一个泛型版RebusHandler及T4工具，自动替在MqMessagesT4Register注册的MqMessages通过T4生成代码，将消息索引到ElasticSearch。|
+
 
 ## License
 

@@ -40,4 +40,3 @@ Abp plus, an extension for Abp Framework.
 
 [MIT](LICENSE)
 
-![Which_LICENSE](https://github.com/personball/abplus/blob/master/Which_LICENSE.jpg?raw=true)

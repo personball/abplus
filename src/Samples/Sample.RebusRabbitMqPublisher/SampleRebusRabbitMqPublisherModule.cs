@@ -16,7 +16,7 @@ namespace Sample
         {
             Configuration.Modules.UseAbplusRebusRabbitMqPublisher()
                 .UseLogging(c => c.NLog())
-                .ConnectionTo("amqp://dev:dev@rabbitmq.local.jk724.cn/dev_host");
+                .ConnectionTo("amqp://flymax:123456@localhost:5672");
 
             Configuration.BackgroundJobs.IsJobExecutionEnabled = true;
         }

@@ -18,7 +18,7 @@ namespace Abp.MqMessages.AutoMapper
             foreach (var type in typesToRegister)
             {
                 var genericArgs = type.BaseType.GetGenericArguments();
-                if (genericArgs.Length > 1)
+                if (genericArgs.Length > 1 && !genericArgs[0].BaseType.IsGenericType)
                 {
                     mapper.CreateMap(genericArgs[0], genericArgs[1]);
                 }

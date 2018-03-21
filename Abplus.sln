@@ -55,7 +55,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.IndexToES
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnetcore", "dotnetcore", "{05685F94-EE1A-4442-8500-2E363E59EF63}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "old", "old", "{5ACBFF74-0B56-4E6B-B31D-9B9420E4263C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net461", "net461", "{5ACBFF74-0B56-4E6B-B31D-9B9420E4263C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

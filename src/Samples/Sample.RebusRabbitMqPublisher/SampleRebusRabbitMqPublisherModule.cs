@@ -4,7 +4,7 @@ using Abp.Modules;
 using Abp.MqMessages.Publishers;
 using Abp.Threading.BackgroundWorkers;
 using Castle.Facilities.Logging;
-using Rebus.NLog;
+using Castle.Services.Logging.NLogIntegration;
 using Sample.BackgroundWorks;
 
 namespace Sample
@@ -15,7 +15,7 @@ namespace Sample
         public override void PreInitialize()
         {
             Configuration.Modules.UseAbplusRebusRabbitMqPublisher()
-                .UseLogging(c => c.NLog())
+                //.UseLogging(c => c.NLog())
                 .ConnectionTo("amqp://dev:dev@rabbitmq.local.jk724.cn/dev_host");
 
             Configuration.BackgroundJobs.IsJobExecutionEnabled = true;
@@ -28,7 +28,7 @@ namespace Sample
 
         public override void PostInitialize()
         {
-            Abp.Dependency.IocManager.Instance.IocContainer.AddFacility<LoggingFacility>(f => f.UseNLog().WithConfig("nlog.config"));
+            Abp.Dependency.IocManager.Instance.IocContainer.AddFacility<LoggingFacility>(f => f.LogUsing<NLogFactory>().WithConfig("nlog.config"));
 
             var workManager = IocManager.Resolve<IBackgroundWorkerManager>();
             workManager.Add(IocManager.Resolve<TestWorker>());

@@ -124,7 +124,7 @@
       <HintPath>..\..\..\packages\Nito.Disposables.1.2.3\lib\netstandard2.0\Nito.Disposables.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\NLog.4.4.13\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\..\..\packages\NLog.4.5.0-rc07\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\RabbitMQ.Client.5.0.1\lib\net451\RabbitMQ.Client.dll</HintPath>
@@ -138,9 +138,8 @@
     <Reference Include="Rebus.NewtonsoftJson, Version=3.1.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Rebus.NewtonsoftJson.3.1.5\lib\NET45\Rebus.NewtonsoftJson.dll</HintPath>
     </Reference>
-    <Reference Include="Rebus.NLog, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Rebus.NLog.3.0.0\lib\NET45\Rebus.NLog.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Rebus.NLog, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Rebus.NLog.4.0.1\lib\net45\Rebus.NLog.dll</HintPath>
     </Reference>
     <Reference Include="Rebus.RabbitMq, Version=4.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Rebus.RabbitMq.4.4.2\lib\net452\Rebus.RabbitMq.dll</HintPath>
@@ -162,6 +161,7 @@
       <HintPath>..\..\..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.IO.Compression, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
       <Private>True</Private>
@@ -192,6 +192,7 @@
       <HintPath>..\..\..\packages\System.Security.Claims.4.3.0\lib\net46\System.Security.Claims.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />

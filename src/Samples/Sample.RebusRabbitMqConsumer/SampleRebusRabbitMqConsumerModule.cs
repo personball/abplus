@@ -1,9 +1,9 @@
-﻿using Abp.Modules;
-using Abp.MqMessages.Consumers;
+﻿using System.Reflection;
 using Abp.Configuration.Startup;
-using System.Reflection;
-using Rebus.NLog;
+using Abp.Modules;
+using Abp.MqMessages.Consumers;
 using Castle.Facilities.Logging;
+using Castle.Services.Logging.NLogIntegration;
 
 namespace Sample
 {
@@ -13,7 +13,7 @@ namespace Sample
         public override void PreInitialize()
         {
             Configuration.Modules.UseAbplusRebusRabbitMqConsumer()
-                .UseLogging(c => c.NLog())
+                // .UseLogging(c => c.NLog())
                 .ConnectTo("amqp://dev:dev@rabbitmq.local.jk724.cn/dev_host")
                 .UseQueue(Assembly.GetExecutingAssembly().GetName().Name)
                 .RegisterHandlerInAssemblys(Assembly.GetExecutingAssembly());
@@ -26,7 +26,7 @@ namespace Sample
 
         public override void PostInitialize()
         {
-            Abp.Dependency.IocManager.Instance.IocContainer.AddFacility<LoggingFacility>(f => f.UseNLog().WithConfig("nlog.config"));
+            Abp.Dependency.IocManager.Instance.IocContainer.AddFacility<LoggingFacility>(f => f.LogUsing<NLogFactory>().WithConfig("nlog.config"));
         }
     }
 }

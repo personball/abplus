@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Sample.MqMessages\Sample.MqMessages.csproj" />
+  </ItemGroup>
+
 </Project>

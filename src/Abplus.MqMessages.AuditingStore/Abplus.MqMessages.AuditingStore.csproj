@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Abp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="abp" Version="3.7.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abplus.MqMessages\Abplus.MqMessages.csproj" />
+    <ProjectReference Include="..\Abplus.MqMessages.RebusCore\Abplus.MqMessages.RebusCore.csproj" />
+  </ItemGroup>
+
+</Project>

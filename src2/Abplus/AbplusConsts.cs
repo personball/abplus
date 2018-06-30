@@ -2,7 +2,7 @@
 {
     public static class AbplusConsts
     {
-        public const string CurrentVersion = "2.0.0.0";
+        public const string CurrentVersion = "0.1.7.7";
        
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{28E1F8EC-E22A-45D3-941F-2A0756D6331D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "abplus", "src\abplus\abplus.csproj", "{10C03A51-881C-4779-9B24-5BFCE234C175}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus", "src\Abplus\Abplus.csproj", "{10C03A51-881C-4779-9B24-5BFCE234C175}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{10C03A51-881C-4779-9B24-5BFCE234C175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,7 +30,13 @@ Global
 		{10C03A51-881C-4779-9B24-5BFCE234C175}.Release|x86.ActiveCfg = Release|Any CPU
 		{10C03A51-881C-4779-9B24-5BFCE234C175}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{10C03A51-881C-4779-9B24-5BFCE234C175} = {28E1F8EC-E22A-45D3-941F-2A0756D6331D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F860D614-C29A-4EBF-954C-8CB27921AB49}
 	EndGlobalSection
 EndGlobal

@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Abp</RootNamespace>
+    <AssemblyName>Abplus</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

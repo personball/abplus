@@ -1,9 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="..\..\common.props"></Import>
+  
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Abp</RootNamespace>
+  
   </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Authorization\Builders\BuilderUtils.cs" />
+    <Compile Remove="Authorization\Builders\PermissionBuilder.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="Authorization\Builders\PermissionBuilder.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Page Include="Authorization\Builders\BuilderUtils.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="Authorization\Builders\PermissionBuilder.tt">

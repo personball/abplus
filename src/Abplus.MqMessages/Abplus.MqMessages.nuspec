@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>personball</authors>
+    <owners>personball</owners>
+    <licenseUrl>https://raw.githubusercontent.com/personball/abplus/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/personball/abplus</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/personball/abplus/master/abplus_icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Abp plus, an extension for Abp Framework. </description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags></tags>
+    <dependencies>
+      <dependency id="Abplus" version="$version$" />
+      <dependency id="Abp.AutoMapper" version="3.7.2" />
+     
+    </dependencies>
+  </metadata>
+</package>

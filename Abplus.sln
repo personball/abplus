@@ -7,23 +7,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{28E1F8EC-E22
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus", "src\Abplus\Abplus.csproj", "{10C03A51-881C-4779-9B24-5BFCE234C175}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages", "src\Abplus.MqMessages\Abplus.MqMessages.csproj", "{5FE016D8-4FBC-4D85-A7D8-165E6F7887F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus.MqMessages", "src\Abplus.MqMessages\Abplus.MqMessages.csproj", "{5FE016D8-4FBC-4D85-A7D8-165E6F7887F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.AuditingConsumerHandler", "src\Abplus.MqMessages.AuditingConsumerHandler\Abplus.MqMessages.AuditingConsumerHandler.csproj", "{B5E2EC5D-4D8A-4FBE-9434-23B422644B68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus.MqMessages.AuditingConsumerHandler", "src\Abplus.MqMessages.AuditingConsumerHandler\Abplus.MqMessages.AuditingConsumerHandler.csproj", "{B5E2EC5D-4D8A-4FBE-9434-23B422644B68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.AuditingStore", "src\Abplus.MqMessages.AuditingStore\Abplus.MqMessages.AuditingStore.csproj", "{AC823FF0-0EEA-46D8-B6FF-BA9E255F5EB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus.MqMessages.AuditingStore", "src\Abplus.MqMessages.AuditingStore\Abplus.MqMessages.AuditingStore.csproj", "{AC823FF0-0EEA-46D8-B6FF-BA9E255F5EB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.IndexToES", "src\Abplus.MqMessages.IndexToES\Abplus.MqMessages.IndexToES.csproj", "{17E54BAB-2FF4-42A1-ACBA-0F88066FF4FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus.MqMessages.IndexToES", "src\Abplus.MqMessages.IndexToES\Abplus.MqMessages.IndexToES.csproj", "{17E54BAB-2FF4-42A1-ACBA-0F88066FF4FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusCore", "src\Abplus.MqMessages.RebusCore\Abplus.MqMessages.RebusCore.csproj", "{D27E21C1-96C8-4EFF-AA4D-43A8ED7CC40B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus.MqMessages.RebusCore", "src\Abplus.MqMessages.RebusCore\Abplus.MqMessages.RebusCore.csproj", "{D27E21C1-96C8-4EFF-AA4D-43A8ED7CC40B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RedisStoreMessageTracker", "src\Abplus.MqMessages.RedisStoreMessageTracker\Abplus.MqMessages.RedisStoreMessageTracker.csproj", "{7A5BE15C-4B89-4397-920F-A15FB8A76FA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus.MqMessages.RedisStoreMessageTracker", "src\Abplus.MqMessages.RedisStoreMessageTracker\Abplus.MqMessages.RedisStoreMessageTracker.csproj", "{7A5BE15C-4B89-4397-920F-A15FB8A76FA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.T4.PermissionsFromJson", "src\Abplus.T4.PermissionsFromJson\Abplus.T4.PermissionsFromJson.csproj", "{629C519A-14DD-4F1A-B235-AC73AC2622F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus.T4.PermissionsFromJson", "src\Abplus.T4.PermissionsFromJson\Abplus.T4.PermissionsFromJson.csproj", "{629C519A-14DD-4F1A-B235-AC73AC2622F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusRabbitMqConsumer", "src\Abplus.MqMessages.RebusRabbitMqConsumer\Abplus.MqMessages.RebusRabbitMqConsumer.csproj", "{E0E26A07-B7A6-41FD-AB74-1CFCB5191F94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus.MqMessages.RebusRabbitMqConsumer", "src\Abplus.MqMessages.RebusRabbitMqConsumer\Abplus.MqMessages.RebusRabbitMqConsumer.csproj", "{E0E26A07-B7A6-41FD-AB74-1CFCB5191F94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusRabbitMqPublisher", "src\Abplus.MqMessages.RebusRabbitMqPublisher\Abplus.MqMessages.RebusRabbitMqPublisher.csproj", "{1C7E75D5-F462-43C7-A230-4E31FAF8CC00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abplus.MqMessages.RebusRabbitMqPublisher", "src\Abplus.MqMessages.RebusRabbitMqPublisher\Abplus.MqMessages.RebusRabbitMqPublisher.csproj", "{1C7E75D5-F462-43C7-A230-4E31FAF8CC00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BE7C78D3-C20F-46D4-A4DD-F66136691F17}"
+	ProjectSection(SolutionItems) = preProject
+		common.props = common.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

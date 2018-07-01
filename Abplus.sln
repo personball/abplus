@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusRabb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.MqMessages.RebusRabbitMqPublisher", "src\Abplus.MqMessages.RebusRabbitMqPublisher\Abplus.MqMessages.RebusRabbitMqPublisher.csproj", "{1C7E75D5-F462-43C7-A230-4E31FAF8CC00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abplus.Web.SignalR", "src\Abplus.Web.SignalR\Abplus.Web.SignalR.csproj", "{B343E258-A129-456E-A4E6-CAB0EFEFE38B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +157,18 @@ Global
 		{1C7E75D5-F462-43C7-A230-4E31FAF8CC00}.Release|x64.Build.0 = Release|Any CPU
 		{1C7E75D5-F462-43C7-A230-4E31FAF8CC00}.Release|x86.ActiveCfg = Release|Any CPU
 		{1C7E75D5-F462-43C7-A230-4E31FAF8CC00}.Release|x86.Build.0 = Release|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Debug|x64.Build.0 = Debug|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Debug|x86.Build.0 = Debug|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Release|x64.ActiveCfg = Release|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Release|x64.Build.0 = Release|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Release|x86.ActiveCfg = Release|Any CPU
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,6 +184,7 @@ Global
 		{629C519A-14DD-4F1A-B235-AC73AC2622F7} = {28E1F8EC-E22A-45D3-941F-2A0756D6331D}
 		{E0E26A07-B7A6-41FD-AB74-1CFCB5191F94} = {28E1F8EC-E22A-45D3-941F-2A0756D6331D}
 		{1C7E75D5-F462-43C7-A230-4E31FAF8CC00} = {28E1F8EC-E22A-45D3-941F-2A0756D6331D}
+		{B343E258-A129-456E-A4E6-CAB0EFEFE38B} = {28E1F8EC-E22A-45D3-941F-2A0756D6331D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F860D614-C29A-4EBF-954C-8CB27921AB49}

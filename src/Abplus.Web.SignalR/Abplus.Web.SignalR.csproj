@@ -7,6 +7,13 @@
 
   <ItemGroup>
     <PackageReference Include="abp" Version="3.7.2" />
+    <PackageReference Include="Abp.Web.SignalR" Version="3.7.2" />
+    <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.3.0" />
+    <PackageReference Include="stackexchange.redis" Version="1.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abplus\Abplus.csproj" />
   </ItemGroup>
 
 </Project>

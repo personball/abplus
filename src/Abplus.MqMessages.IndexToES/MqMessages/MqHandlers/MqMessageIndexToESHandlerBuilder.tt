@@ -1,0 +1,49 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+
+<#@ include file="T4MultipleOutputManager.ttinclude" #>
+
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.IO" #>
+<#@ assembly name="$(SolutionDir)packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll" #>
+<#@ assembly name="$(ProjectDir)bin\$(ConfigurationName)\$(ProjectName).exe" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ import namespace="Newtonsoft.Json.Linq" #>
+<#@ import namespace="System.Globalization" #>
+<#@ import namespace="Abp.MqMessages.MqHandlers" #>
+<#@ output extension=".cs" #>
+
+
+<#
+	var tempateManager = Manager.Create(Host,GenerationEnvironment);
+	string projectName = Host.ResolveAssemblyReference("$(ProjectName)");
+	
+	var types=MqMessagesT4Register.MqMessageTypes;
+	foreach(var type in types)
+	{
+		tempateManager.StartNewFile(type.Name+"IndexToESHandler.cs");
+#>
+using Abp;
+using Abp.MqMessages.MqHandlers;
+using <#=type.Namespace#>;
+
+namespace <#=projectName#>.MqMessages.MqHandlers
+{
+    public class <#=type.Name#>IndexToESHandler : MqMessageIndexToESHandlerBase<<#=type.Name#>>
+    {
+        public <#=type.Name#>IndexToESHandler() 
+			: base(【DefaultIndexName】, IndexFreq.PerMonth, 【Consts.LocalizationSourceName】)
+        {
+        }
+    }
+}
+<#
+	}//foreach-end
+				
+	tempateManager.EndBlock();
+	tempateManager.Process(true); 
+#>
+
+

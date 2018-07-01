@@ -5,4 +5,33 @@
     <RootNamespace>Abp</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="MqMessages\MqHandlers\MqMessageIndexToESHandlerBuilder.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MqMessageIndexToESHandlerBuilder.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MqMessages\MqHandlers\MqMessageIndexToESHandlerBuilder.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MqMessageIndexToESHandlerBuilder.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="abp" Version="3.7.2" />
+    <PackageReference Include="nest" Version="6.1.0" />
+    <PackageReference Include="rebus" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abplus.MqMessages\Abplus.MqMessages.csproj" />
+  </ItemGroup>
+
 </Project>

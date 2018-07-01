@@ -5,4 +5,10 @@
     <RootNamespace>Abp</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="Authorization\Builders\PermissionBuilder.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
 </Project>

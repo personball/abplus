@@ -1,0 +1,59 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+
+<#@ include file="T4MultipleOutputManager.ttinclude" #>
+
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.IO" #>
+<#@ assembly name="$(SolutionDir)packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll" #>
+<#@ assembly name="$(ProjectDir)bin\$(ConfigurationName)\【YourCompany.YourProject】.Core.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ import namespace="Newtonsoft.Json.Linq" #>
+<#@ import namespace="System.Globalization" #>
+<#@ import namespace="【YourCompany.YourProject】.Authorization" #>
+
+<#@ output extension=".cs" #>
+
+
+<#
+				var tempateManager = Manager.Create(Host,GenerationEnvironment);
+				string solutionsPath = Host.ResolveAssemblyReference("$(SolutionDir)");  
+				string projectPath = Host.ResolveAssemblyReference("$(ProjectDir)");
+                
+				var dic = BuilderUtils.GeneratePermission();
+				
+				foreach(var item in dic)
+				{	
+					 var list= item.Value;
+					 tempateManager.StartNewFile(item.Key+"Permissions.cs");
+				
+				#>
+namespace 【YourCompany.YourProject】.Authorization
+{
+    /// <summary>
+    /// Permissions definition
+    /// </summary>
+    public static class <#=item.Key #>Permissions
+    {
+<# 
+								foreach(var item1 in list){
+#>
+		/// <summary>
+		/// <#=item1.Summary #>
+		/// </summary>
+		public const string <#=item1.Name #> = "<#=item1.Value #>";
+
+<# 
+	}
+#>
+}
+}
+<#
+}
+	tempateManager.EndBlock();
+	tempateManager.Process(true); 
+#>
+
+

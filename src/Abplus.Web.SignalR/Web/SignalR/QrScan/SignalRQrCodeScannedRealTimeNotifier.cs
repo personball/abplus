@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Abp.AspNetCore.SignalR.Hubs;
 using Abp.QrCode;
-using Abp.Web.SignalR.Hubs;
 using Castle.Core.Logging;
-using Microsoft.AspNet.SignalR;
+using Microsoft.AspNetCore.SignalR;
 
 namespace Abp.Web.SignalR.QrScan
 {
@@ -14,33 +14,28 @@ namespace Abp.Web.SignalR.QrScan
         /// </summary>
         public ILogger Logger { get; set; }
 
-        private static IHubContext CommonHub
-        {
-            get
-            {
-                return GlobalHost.ConnectionManager.GetHubContext<AbpCommonHub>();
-            }
-        }
-
+        private readonly IHubContext<AbpCommonHub> _commonHub;
+       
         /// <summary>
         /// Initializes a new instance of the <see cref="SignalRRealTimeNotifier"/> class.
         /// </summary>
-        public SignalRQrCodeScannedRealTimeNotifier()
+        public SignalRQrCodeScannedRealTimeNotifier(IHubContext<AbpCommonHub> commonHub)
         {
             Logger = NullLogger.Instance;
+            _commonHub = commonHub;
         }
 
         public Task Notify(string scannerId, string connectionId, object properties = null)
         {
             try
             {
-                var signalRClient = CommonHub.Clients.Client(connectionId);
+                var signalRClient = _commonHub.Clients.Client(connectionId);
                 if (signalRClient == null)
                 {
                     throw new Exception($"Can not find the client with connectionId:{connectionId}");
                 }
 
-                signalRClient.qrScanned(scannerId, properties);
+                signalRClient.SendAsync("qrScanned",scannerId, properties);
             }
             catch (Exception ex)
             {

@@ -35,8 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="abp" Version="3.7.2" />
-    <PackageReference Include="nest" Version="6.1.0" />
+    <PackageReference Include="abp" Version="3.8.2" />
+    <PackageReference Include="nest" Version="6.2.0" />
     <PackageReference Include="rebus" Version="4.2.1" />
   </ItemGroup>
 

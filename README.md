@@ -7,7 +7,7 @@ Abp plus, an extension for Abp Framework.
 ## Packages
 
 |Package|Status|
-|:------|:-----:|
+|:------|:-----|
 |Abplus|[![NuGet version](https://badge.fury.io/nu/Abplus.svg)](https://badge.fury.io/nu/Abplus)|
 |Abplus.MqMessages|[![NuGet version](https://badge.fury.io/nu/Abplus.MqMessages.svg)](https://badge.fury.io/nu/Abplus.MqMessages)|
 |Abplus.MqMessages.AuditingStore|[![NuGet version](https://badge.fury.io/nu/Abplus.MqMessages.AuditingStore.svg)](https://badge.fury.io/nu/Abplus.MqMessages.AuditingStore)|
@@ -25,7 +25,7 @@ Abp plus, an extension for Abp Framework.
 ## Remarks
 
 |Package|Remark|
-|:------|:-----:|
+|:------|:-----|
 |Abplus|基础概念扩展及接口定义|
 |Abplus.MqMessages|集成消息队列的扩展方案|
 |Abplus.MqMessages.AuditingStore|集成消息队列的扩展方案，审计日志发送消息队列|

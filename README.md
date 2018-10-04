@@ -30,8 +30,8 @@ Abp plus, an extension for Abp Framework.
 |Abplus.MqMessages|集成消息队列的扩展方案|
 |Abplus.MqMessages.AuditingStore|集成消息队列的扩展方案，审计日志发送消息队列|
 |Abplus.MqMessages.RebusCore|集成消息队列的扩展方案，Rebus Publisher的实现|
-|Abplus.MqMessages.RebusRabbitMqConsumer|集成消息队列的扩展方案，消费端模块（具备发布消息能力）,使用方法参考Samples/Sample.RebusRabbitMqConsumer|
-|Abplus.MqMessages.RebusRabbitMqPublisher|集成消息队列的扩展方案，生产端模块，使用方法参考Samples/Sample.RebusRabbitMqPublisher|
+|Abplus.MqMessages.RebusRabbitMqConsumer|集成消息队列的扩展方案，消费端模块（具备发布消息能力）,使用方法参考src/Samples/Sample.DotNetCoreConsumerHost或Sample.DotNetFxConsumerHost|
+|Abplus.MqMessages.RebusRabbitMqPublisher|集成消息队列的扩展方案，生产端模块，使用方法参考Samples/Sample.DotNetCorePublisherHost或Sample.DotNetFxPublisherHost|
 |Abplus.MqMessages.RedisStoreMessageTracker|集成消息队列的扩展方案，消费端消费行为的幂等支持|
 |Abplus.T4.PermissionsFromJson|提供T4工具，自动从Json文件定义中生成权限定义和权限树|
 |Abplus.MqMessages.IndexToES|提供一个泛型版RebusHandler及T4工具，自动替在MqMessagesT4Register注册的MqMessages通过T4生成代码，将消息索引到ElasticSearch。|

@@ -15,7 +15,7 @@ namespace Sample.DotNetFxConsumerHost
         {
             Configuration.Modules.UseAbplusRebusRabbitMqConsumer()
                 .UseLogging(c => c.ColoredConsole())//c.NLog()
-                .ConnectTo("amqp://dev:dev@rabbitmq.local.abplus.cn/")
+                .ConnectTo("amqp://dev:dev@rabbitmq.local.abplus.cn/")//set your own connection string of rabbitmq
                 .UseQueue(Assembly.GetExecutingAssembly().GetName().Name)
                 .RegisterHandlerInAssemblys(Assembly.GetExecutingAssembly());
         }

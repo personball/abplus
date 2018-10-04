@@ -12,7 +12,7 @@ namespace Sample.DotNetCoreConsumerHost
         {
             Configuration.Modules.UseAbplusRebusRabbitMqConsumer()
                 .UseLogging(c => c.ColoredConsole())
-                .ConnectTo("amqp://dev:dev@rabbitmq.local.abplus.cn/")
+                .ConnectTo("amqp://dev:dev@rabbitmq.local.abplus.cn/")//set your own connection string of rabbitmq
                 .UseQueue(Assembly.GetExecutingAssembly().GetName().Name)
                 .RegisterHandlerInAssemblys(Assembly.GetExecutingAssembly());
         }

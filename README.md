@@ -17,6 +17,7 @@ Abp plus, an extension for Abp Framework.
 |Abplus.MqMessages.RedisStoreMessageTracker|[![NuGet version](https://badge.fury.io/nu/Abplus.MqMessages.RedisStoreMessageTracker.svg)](https://badge.fury.io/nu/Abplus.MqMessages.RedisStoreMessageTracker)|
 |Abplus.T4.PermissionsFromJson|[![NuGet version](https://badge.fury.io/nu/Abplus.T4.PermissionsFromJson.svg)](https://badge.fury.io/nu/Abplus.T4.PermissionsFromJson)|
 |Abplus.MqMessages.IndexToES|[![NuGet version](https://badge.fury.io/nu/Abplus.MqMessages.IndexToES.svg)](https://badge.fury.io/nu/Abplus.MqMessages.IndexToES)|
+|Abplus.AspNetCore.SignalR|[![NuGet version](https://badge.fury.io/nu/Abplus.AspNetCore.SignalR.svg)](https://badge.fury.io/nu/Abplus.AspNetCore.SignalR)|
 |Abplus.EntityFramework (deprecated)|[![NuGet version](https://badge.fury.io/nu/Abplus.EntityFramework.svg)](https://badge.fury.io/nu/Abplus.EntityFramework)|
 |Abplus.Web.Api (deprecated)|[![NuGet version](https://badge.fury.io/nu/Abplus.Web.Api.svg)](https://badge.fury.io/nu/Abplus.Web.Api)|
 |Abplus.Web.SignalR (deprecated)|[![NuGet version](https://badge.fury.io/nu/Abplus.Web.SignalR.svg)](https://badge.fury.io/nu/Abplus.Web.SignalR)|
@@ -32,12 +33,12 @@ Abp plus, an extension for Abp Framework.
 |Abplus.MqMessages.RebusRabbitMqConsumer|集成消息队列的扩展方案，消费端模块（具备发布消息能力）,使用方法参考Samples/Sample.RebusRabbitMqConsumer|
 |Abplus.MqMessages.RebusRabbitMqPublisher|集成消息队列的扩展方案，生产端模块，使用方法参考Samples/Sample.RebusRabbitMqPublisher|
 |Abplus.MqMessages.RedisStoreMessageTracker|集成消息队列的扩展方案，消费端消费行为的幂等支持|
-(https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/RealTime/OnlineClientManager.cs#L26)在线状态不跨进程共享的问题。|
 |Abplus.T4.PermissionsFromJson|提供T4工具，自动从Json文件定义中生成权限定义和权限树|
 |Abplus.MqMessages.IndexToES|提供一个泛型版RebusHandler及T4工具，自动替在MqMessagesT4Register注册的MqMessages通过T4生成代码，将消息索引到ElasticSearch。|
+|Abplus.AspNetCore.SignalR|基于Redis的OnlineClientManager，解决Abp自带的[OnlineClientManager](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/RealTime/OnlineClientManager.cs#L26)在线状态不跨进程共享的问题。|
 |Abplus.EntityFramework(deprecated)|EF辅助方法：预热，自动注册FluentApi配置类|
 |Abplus.Web.Api(deprecated)|WebApi基于请求头的版本化机制，使用方法见Samples/Abplus.WebApiVersionRoute.Sample。|
-|Abplus.Web.SignalR(deprecated)|基于Redis的OnlineClientManager，解决Abp自带的[OnlineClientManager]
+|Abplus.Web.SignalR(deprecated)|基于Redis的OnlineClientManager，解决Abp自带的[OnlineClientManager](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/RealTime/OnlineClientManager.cs#L26)在线状态不跨进程共享的问题。|
 
 ## License
 

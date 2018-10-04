@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <Import Project="..\..\common.props"></Import>
+  
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Abp</RootNamespace>
+    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="abp" Version="3.8.2" />
+    <PackageReference Include="Rebus.Castle.Windsor" Version="4.1.0" />
+    <PackageReference Include="rebus.rabbitmq" Version="4.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abplus.MqMessages.RebusCore\Abplus.MqMessages.RebusCore.csproj" />
+  </ItemGroup>
+
+</Project>

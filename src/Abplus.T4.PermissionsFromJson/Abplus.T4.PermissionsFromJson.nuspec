@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Abp plus, an extension for Abp Framework. </description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2017</copyright>
+    <copyright>Copyright 2018</copyright>
     <tags></tags>
     <contentFiles>
       <files include="Authorization\Builders\Permissions\Sample.json" buildAction="EmbeddedResource" />

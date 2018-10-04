@@ -5,6 +5,7 @@ using Abp.Dependency;
 using Abp.Threading.Timers;
 using Rebus.Handlers;
 using System.Linq;
+using Abp.Auditing.AuditingStores;
 
 namespace Abp.Auditing.AuditingStore
 {

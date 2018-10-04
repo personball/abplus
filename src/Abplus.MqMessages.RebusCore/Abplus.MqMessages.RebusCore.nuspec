@@ -12,11 +12,11 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Abp plus, an extension for Abp Framework. </description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2017</copyright>
+    <copyright>Copyright 2018</copyright>
     <tags></tags>
     <dependencies>
       <dependency id="Abplus" version="$version$" />
-      <dependency id="Rebus" version="3.1.2" />
+      <dependency id="Rebus" version="4.2.1" />
     </dependencies>
   </metadata>
 </package>

@@ -12,12 +12,12 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Abp plus, an extension for Abp Framework. </description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2017</copyright>
+    <copyright>Copyright 2018</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="Abp" version="1.4.2" />
-      <dependency id="Rebus" version="3.1.2" />
-      <dependency id="NEST" version="5.5.0" />
+      <dependency id="Abp" version="3.7.2" />
+      <dependency id="Rebus" version="4.2.1" />
+      <dependency id="NEST" version="6.1.0" />
     </dependencies>
     <contentFiles>
       <files include="MqMessages\MqHandlers\MqMessagesT4Register.cs" />

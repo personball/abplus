@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Abp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="abp" Version="3.8.2" />
+    <PackageReference Include="rebus" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abplus.MqMessages.AuditingStore\Abplus.MqMessages.AuditingStore.csproj" />
+  </ItemGroup>
+
+</Project>

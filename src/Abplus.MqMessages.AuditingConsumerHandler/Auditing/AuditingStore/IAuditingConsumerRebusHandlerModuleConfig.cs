@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Abp.Auditing.AuditingStores;
 
 namespace Abp.Auditing.AuditingStore
 {
@@ -22,5 +23,7 @@ namespace Abp.Auditing.AuditingStore
         /// 批量存储的委托
         /// </summary>
         Action<IEnumerable<AuditInfoMqMessage>> BatchStoreAction { get; }
+
+        //TODO@personball setter?
     }
 }

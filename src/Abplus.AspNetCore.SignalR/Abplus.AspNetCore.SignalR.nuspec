@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>personball</authors>
+    <owners>personball</owners>
+    <licenseUrl>https://raw.githubusercontent.com/personball/abplus/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/personball/abplus</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/personball/abplus/master/abplus_icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Abp plus, an extension for Abp Framework. </description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags></tags>
+    <dependencies>
+      <dependency id="Abp" version="3.8.3" />
+      <dependency id="Abp.AspNetCore.SignalR" version="3.8.3" />
+      <dependency id="StackExchange.Redis" version="1.2.6" />
+      <dependency id="Abplus" version="$version$" />
+    </dependencies>
+  </metadata>
+</package>

@@ -20,7 +20,7 @@ namespace Abp.MqMessages.Publishers
 
         public string MessageAuditingQueueName { get; private set; }
 
-        public IRebusRabbitMqPublisherModuleConfig ConnectionTo(string connectionString)
+        public IRebusRabbitMqPublisherModuleConfig ConnectTo(string connectionString)
         {
             ConnectionString = connectionString;
             return this;

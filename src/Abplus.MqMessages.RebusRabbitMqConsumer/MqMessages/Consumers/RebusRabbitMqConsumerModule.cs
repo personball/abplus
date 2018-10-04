@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using Abp.Modules;
+﻿using Abp.Modules;
 using Abp.MqMessages.Publishers;
 using Rebus.Auditing.Messages;
 using Rebus.Bus;
 using Rebus.CastleWindsor;
 using Rebus.Config;
 using Rebus.Handlers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace Abp.MqMessages.Consumers
 {
@@ -40,8 +40,11 @@ namespace Abp.MqMessages.Consumers
                     rebusConfig.Logging(moduleConfig.LoggingConfigurer);
                 }
 
-                rebusConfig.Serialization(moduleConfig.SerializerConfigurer);
-
+                if (moduleConfig.SerializerConfigurer!=null)
+                {
+                    rebusConfig.Serialization(moduleConfig.SerializerConfigurer);
+                }
+                
                 if (moduleConfig.OptionsConfigurer != null)
                 {
                     rebusConfig.Options(moduleConfig.OptionsConfigurer);

@@ -124,7 +124,7 @@ namespace Abp.MqMessages.Consumers
         IRebusRabbitMqConsumerModuleConfig UseOptions(Action<OptionsConfigurer> optionsConfigurer);
 
         /// <summary>
-        /// 配置序列化
+        /// 自定义序列化机制
         /// </summary>
         /// <param name="serializerConfigurer"></param>
         /// <returns></returns>

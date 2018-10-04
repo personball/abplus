@@ -15,7 +15,7 @@ namespace Abp.MqMessages.Consumers
             MessageAuditingEnabled = false;
             MaxParallelism = 1;
             NumberOfWorkers = 1;
-            //SerializerConfigurer = c => c.UseNewtonsoftJson(new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });//不兼容，以及core运行时下，用完整类型名称限定太死 https://github.com/rebus-org/Rebus/issues/672
+          //  SerializerConfigurer = c => c.UseNewtonsoftJson(new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });//不兼容，以及core运行时下，用完整类型名称限定太死 https://github.com/rebus-org/Rebus/issues/672
         }
 
         public Assembly[] AssemblysIncludeRebusMqMessageHandlers { get; private set; }

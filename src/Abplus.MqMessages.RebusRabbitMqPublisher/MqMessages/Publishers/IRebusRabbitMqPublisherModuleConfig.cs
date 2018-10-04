@@ -42,7 +42,7 @@ namespace Abp.MqMessages.Publishers
         /// </summary>
         /// <param name="connectionString"></param>
         /// <returns></returns>
-        IRebusRabbitMqPublisherModuleConfig ConnectionTo(string connectionString);
+        IRebusRabbitMqPublisherModuleConfig ConnectTo(string connectionString);
 
         /// <summary>
         /// 配置日志组件

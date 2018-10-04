@@ -4,7 +4,7 @@ using Abp.Threading.BackgroundWorkers;
 using Abp.Threading.Timers;
 using System;
 
-namespace Sample.DotNetCorePublisherHost.BackgroundWorker
+namespace Sample.DotNetFxPublisherHost.BackgroundWorker
 {
     public class TestWorker : PeriodicBackgroundWorkerBase, ISingletonDependency
     {
@@ -23,7 +23,7 @@ namespace Sample.DotNetCorePublisherHost.BackgroundWorker
             Logger.Info($"TestWork Done! Time:{DateTime.Now}");
             _publisher.Publish(new TestMessage
             {
-                Value = "TestWork from DotNetCoreHost:BlaBlaBlaBlaBlaBla",
+                Value = "TestWork from DotNetFxHost:BlaBlaBlaBlaBlaBla",
                 Time = DateTime.Now
             });
         }

@@ -37,6 +37,7 @@ namespace Abp.MqMessages.Publishers
                     rebusConfig.Logging(moduleConfig.LoggingConfigurer);
                 }
 
+                //https://github.com/rebus-org/Rebus.RabbitMq/tree/master/Rebus.RabbitMq/Config  more option about RabbitMqOptionsBuilder
                 _bus = rebusConfig.Transport(t => t.UseRabbitMqAsOneWayClient(moduleConfig.ConnectionString))
                      .Start();
             }

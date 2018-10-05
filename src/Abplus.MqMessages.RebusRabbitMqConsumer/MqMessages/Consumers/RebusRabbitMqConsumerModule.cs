@@ -75,6 +75,7 @@ namespace Abp.MqMessages.Consumers
                         .Distinct());
                 }
 
+                //https://github.com/rebus-org/Rebus.RabbitMq/tree/master/Rebus.RabbitMq/Config  more option about RabbitMqOptionsBuilder
                 _bus = rebusConfig.Transport(c => c.UseRabbitMq(moduleConfig.ConnectString, moduleConfig.QueueName).Prefetch(moduleConfig.PrefetchCount))
                     .Start();
 

@@ -17,7 +17,6 @@
     <dependencies>
       <dependency id="Abplus" version="$version$" />
       <dependency id="Abp.AutoMapper" version="3.8.3" />
-     
     </dependencies>
   </metadata>
 </package>

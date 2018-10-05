@@ -1,9 +1,6 @@
-﻿using System;
+﻿using Abp.MqMessages.AuditingStores;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Abp.Auditing.AuditingStores;
 
 namespace Abp.Auditing.AuditingStore
 {
@@ -21,5 +18,22 @@ namespace Abp.Auditing.AuditingStore
 
         public int PeriodInSeconds { get; private set; }
 
+        public IAuditingConsumerRebusHandlerModuleConfig Batch(int batchSize)
+        {
+            BatchSize = batchSize;
+            return this;
+        }
+
+        public IAuditingConsumerRebusHandlerModuleConfig Do(Action<IEnumerable<AuditInfoMqMessage>> storeAction)
+        {
+            BatchStoreAction = storeAction;
+            return this;
+        }
+
+        public IAuditingConsumerRebusHandlerModuleConfig EveryPeriodInSeconds(int seconds)
+        {
+            PeriodInSeconds = seconds;
+            return this;
+        }
     }
 }

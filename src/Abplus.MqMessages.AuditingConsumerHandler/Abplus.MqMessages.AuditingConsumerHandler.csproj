@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Abplus.MqMessages.AuditingStore\Abplus.MqMessages.AuditingStore.csproj" />
+    <ProjectReference Include="..\Abplus.MqMessages\Abplus.MqMessages.csproj" />
   </ItemGroup>
 
 </Project>

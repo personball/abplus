@@ -1,11 +1,11 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Abp.Dependency;
+﻿using Abp.Dependency;
+using Abp.MqMessages.AuditingStores;
 using Abp.Threading.Timers;
 using Rebus.Handlers;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq;
-using Abp.Auditing.AuditingStores;
+using System.Threading.Tasks;
 
 namespace Abp.Auditing.AuditingStore
 {

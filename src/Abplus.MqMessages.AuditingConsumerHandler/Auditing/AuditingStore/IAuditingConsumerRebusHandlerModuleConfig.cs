@@ -1,9 +1,6 @@
-﻿using System;
+﻿using Abp.MqMessages.AuditingStores;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Abp.Auditing.AuditingStores;
 
 namespace Abp.Auditing.AuditingStore
 {
@@ -24,6 +21,25 @@ namespace Abp.Auditing.AuditingStore
         /// </summary>
         Action<IEnumerable<AuditInfoMqMessage>> BatchStoreAction { get; }
 
-        //TODO@personball setter?
+        /// <summary>
+        /// 设置执行间隔(单位:秒)
+        /// </summary>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
+        IAuditingConsumerRebusHandlerModuleConfig EveryPeriodInSeconds(int seconds);
+        
+        /// <summary>
+        /// 设置每批大小
+        /// </summary>
+        /// <param name="batchSize"></param>
+        /// <returns></returns>
+        IAuditingConsumerRebusHandlerModuleConfig Batch(int batchSize);
+
+        /// <summary>
+        /// 批量存储逻辑,如何处理消息
+        /// </summary>
+        /// <param name="storeAction"></param>
+        /// <returns></returns>
+        IAuditingConsumerRebusHandlerModuleConfig Do(Action<IEnumerable<AuditInfoMqMessage>> storeAction);
     }
 }

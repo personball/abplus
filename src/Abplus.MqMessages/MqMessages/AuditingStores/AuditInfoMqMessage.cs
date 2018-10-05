@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Abp.Auditing.AuditingStores
+namespace Abp.MqMessages.AuditingStores
 {
     public class AuditInfoMqMessage
     {

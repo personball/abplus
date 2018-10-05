@@ -40,11 +40,11 @@ namespace Abp.MqMessages.Consumers
                     rebusConfig.Logging(moduleConfig.LoggingConfigurer);
                 }
 
-                if (moduleConfig.SerializerConfigurer!=null)
+                if (moduleConfig.SerializerConfigurer != null)
                 {
                     rebusConfig.Serialization(moduleConfig.SerializerConfigurer);
                 }
-                
+
                 if (moduleConfig.OptionsConfigurer != null)
                 {
                     rebusConfig.Options(moduleConfig.OptionsConfigurer);
@@ -60,7 +60,7 @@ namespace Abp.MqMessages.Consumers
                 {
                     rebusConfig.Options(o => o.EnableMessageAuditing(moduleConfig.MessageAuditingQueueName));
                 }
-                
+
                 var mqMessageTypes = new List<Type>();
                 //Register handlers first!
                 foreach (var assembly in moduleConfig.AssemblysIncludeRebusMqMessageHandlers)
@@ -75,8 +75,8 @@ namespace Abp.MqMessages.Consumers
                         .Distinct());
                 }
 
-                _bus = rebusConfig.Transport(c => c.UseRabbitMq(moduleConfig.ConnectString, moduleConfig.QueueName))
-                      .Start();
+                _bus = rebusConfig.Transport(c => c.UseRabbitMq(moduleConfig.ConnectString, moduleConfig.QueueName).Prefetch(moduleConfig.PrefetchCount))
+                    .Start();
 
                 //Subscribe messages
                 mqMessageTypes = mqMessageTypes.Distinct().ToList();

@@ -14,7 +14,7 @@ namespace Abp.Auditing.AuditingStore
         /// <summary>
         /// 执行间隔（单位：秒）
         /// </summary>
-        int PeriodInSeconds { get; }
+        TimeSpan Period { get; }
 
         /// <summary>
         /// 批量存储的委托
@@ -26,7 +26,7 @@ namespace Abp.Auditing.AuditingStore
         /// </summary>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        IAuditingConsumerRebusHandlerModuleConfig EveryPeriodInSeconds(int seconds);
+        IAuditingConsumerRebusHandlerModuleConfig EveryPeriodIn(TimeSpan period);
         
         /// <summary>
         /// 设置每批大小

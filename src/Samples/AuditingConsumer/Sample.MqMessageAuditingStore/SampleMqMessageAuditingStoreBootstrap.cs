@@ -1,10 +1,10 @@
 ﻿using Abp;
 
-namespace Sample.DotNetCoreConsumerHost
+namespace Sample.MqMessageAuditingStore
 {
-    public class SampleConsumerHostBootstrap
+    public class SampleMqMessageAuditingStoreBootstrap
     {
-        private static readonly AbpBootstrapper _bs = AbpBootstrapper.Create<SampleConsumerHostModule>();
+        private static readonly AbpBootstrapper _bs = AbpBootstrapper.Create<SampleMqMessageAuditingStoreModule>();
 
         public void Start()
         {

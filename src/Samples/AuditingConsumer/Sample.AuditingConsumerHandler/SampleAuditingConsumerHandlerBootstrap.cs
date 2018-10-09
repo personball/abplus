@@ -1,10 +1,10 @@
 ﻿using Abp;
 
-namespace Sample.DotNetCoreConsumerHost
+namespace Sample.AuditingConsumerHandler
 {
-    public class SampleConsumerHostBootstrap
+    public class SampleAuditingConsumerHandlerBootstrap
     {
-        private static readonly AbpBootstrapper _bs = AbpBootstrapper.Create<SampleConsumerHostModule>();
+        private static readonly AbpBootstrapper _bs = AbpBootstrapper.Create<SampleAuditingConsumerHandlerModule>();
 
         public void Start()
         {

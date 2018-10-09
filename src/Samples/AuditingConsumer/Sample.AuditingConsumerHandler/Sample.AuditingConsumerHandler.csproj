@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Abplus.MqMessages.AuditingConsumerHandler\Abplus.MqMessages.AuditingConsumerHandler.csproj" />
+    <ProjectReference Include="..\..\..\Abplus.MqMessages.RebusRabbitMqConsumer\Abplus.MqMessages.RebusRabbitMqConsumer.csproj" />
+    <ProjectReference Include="..\..\..\Abplus.MqMessages\Abplus.MqMessages.csproj" />
+    <ProjectReference Include="..\..\..\Abplus\Abplus.csproj" />
+  </ItemGroup>
+
+</Project>

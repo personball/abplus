@@ -9,14 +9,14 @@ namespace Abp.Auditing.AuditingStore
         public AuditingConsumerRebusHandlerModuleConfig()
         {
             BatchSize = 100;
-            PeriodInSeconds = 1;
+            Period = TimeSpan.FromSeconds(1);
             BatchStoreAction = (msgList) => { };
         }
         public int BatchSize { get; private set; }
 
         public Action<IEnumerable<AuditInfoMqMessage>> BatchStoreAction { get; private set; }
 
-        public int PeriodInSeconds { get; private set; }
+        public TimeSpan Period { get; private set; }
 
         public IAuditingConsumerRebusHandlerModuleConfig Batch(int batchSize)
         {
@@ -30,9 +30,9 @@ namespace Abp.Auditing.AuditingStore
             return this;
         }
 
-        public IAuditingConsumerRebusHandlerModuleConfig EveryPeriodInSeconds(int seconds)
+        public IAuditingConsumerRebusHandlerModuleConfig EveryPeriodIn(TimeSpan period)
         {
-            PeriodInSeconds = seconds;
+            Period = period;
             return this;
         }
     }

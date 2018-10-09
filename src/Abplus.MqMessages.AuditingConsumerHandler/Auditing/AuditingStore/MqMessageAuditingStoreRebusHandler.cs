@@ -21,7 +21,7 @@ namespace Abp.Auditing.AuditingStore
             InMemoryAuditInfoQueue = new ConcurrentQueue<AuditInfoMqMessage>();
 
             var config = IocManager.Instance.Resolve<IAuditingConsumerRebusHandlerModuleConfig>();
-            Timer = new AbpTimer(config.PeriodInSeconds * 1000);
+            Timer = new AbpTimer((int)config.Period.TotalMilliseconds, true);
 
             Timer.Elapsed += (s, e) =>
             {

@@ -15,9 +15,8 @@
     <copyright>Copyright 2018</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="Abp" version="3.8.3" />
       <dependency id="Abplus.MqMessages" version="$version$" />
-      <dependency id="Abplus.MqMessages.RebusCore" version="$version$" />
+      <dependency id="Rebus" version="4.2.1" />
     </dependencies>
   </metadata>
 </package>

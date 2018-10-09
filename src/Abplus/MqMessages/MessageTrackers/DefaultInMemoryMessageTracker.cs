@@ -13,8 +13,7 @@ namespace Abp.MqMessages.MessageTrackers
             InMemoryStore = new ConcurrentBag<string>();
         }
 
-        public static DefaultInMemoryMessageTracker Instance { get { return SingletonInstance; } }
-        private static readonly DefaultInMemoryMessageTracker SingletonInstance = new DefaultInMemoryMessageTracker();
+        public static DefaultInMemoryMessageTracker Instance { get; } = new DefaultInMemoryMessageTracker();
 
         public Task MarkAsProcessed(string processId)
         {

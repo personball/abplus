@@ -1,11 +1,11 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Abp.Dependency;
+﻿using Abp.Dependency;
+using Abp.MqMessages.AuditingStores;
 using Abp.Threading.Timers;
 using Rebus.Handlers;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq;
-using Abp.Auditing.AuditingStores;
+using System.Threading.Tasks;
 
 namespace Abp.Auditing.AuditingStore
 {
@@ -21,7 +21,7 @@ namespace Abp.Auditing.AuditingStore
             InMemoryAuditInfoQueue = new ConcurrentQueue<AuditInfoMqMessage>();
 
             var config = IocManager.Instance.Resolve<IAuditingConsumerRebusHandlerModuleConfig>();
-            Timer = new AbpTimer(config.PeriodInSeconds * 1000);
+            Timer = new AbpTimer((int)config.Period.TotalMilliseconds, true);
 
             Timer.Elapsed += (s, e) =>
             {

@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Abp.Auditing.AuditingStore;
 
 namespace Abp.Configuration.Startup
 {
     public static class AuditingConsumerRebusHandlerConfigurationExtensions
     {
-        //TODO@personball 这个模块是为了直接消费Abplus.MqMessages.AuditingStore里的AuditInfoMqMessage?
+        public static IAuditingConsumerRebusHandlerModuleConfig AuditingConsumer(this IModuleConfigurations configurations)
+        {
+            return configurations.AbpConfiguration.GetOrCreate("Modules.Abplus.AuditingConsumer", () => configurations.AbpConfiguration.IocManager.Resolve<IAuditingConsumerRebusHandlerModuleConfig>());
+        }
     }
 }

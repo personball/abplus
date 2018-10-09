@@ -33,6 +33,11 @@ namespace Abp.MqMessages.Consumers
         int NumberOfWorkers { get; }
 
         /// <summary>
+        /// 消费时每次拉取的消息个数
+        /// </summary>
+        int PrefetchCount { get; }
+
+        /// <summary>
         /// 消息审计是否开启，默认不开启
         /// </summary>
         bool MessageAuditingEnabled { get; }
@@ -90,11 +95,18 @@ namespace Abp.MqMessages.Consumers
         IRebusRabbitMqConsumerModuleConfig SetMaxParallelism(int maxParallelism);
 
         /// <summary>
-        /// 
+        /// 设置最大工作线程数
         /// </summary>
         /// <param name="numberOfWorkers">最大Worker数</param>
         /// <returns></returns>
         IRebusRabbitMqConsumerModuleConfig SetNumberOfWorkers(int numberOfWorkers);
+
+        /// <summary>
+        /// 设置每次拉取消息数量,默认50
+        /// </summary>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        IRebusRabbitMqConsumerModuleConfig Prefetch(int count);
 
         /// <summary>
         /// 启用消息审计

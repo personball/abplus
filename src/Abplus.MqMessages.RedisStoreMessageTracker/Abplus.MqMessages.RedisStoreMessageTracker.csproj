@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="abp" Version="3.8.3" />
-    <PackageReference Include="abp.rediscache" Version="3.8.3" />
+    <PackageReference Include="abp" Version="4.0.1" />
+    <PackageReference Include="abp.rediscache" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>

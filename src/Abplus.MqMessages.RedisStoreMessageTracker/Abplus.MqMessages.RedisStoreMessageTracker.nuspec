@@ -15,8 +15,8 @@
     <copyright>Copyright 2018</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="Abp" version="3.8.3" />
-      <dependency id="Abp.RedisCache" version="3.8.3"/>
+      <dependency id="Abplus" version="$version$" />
+      <dependency id="Abp.RedisCache" version="4.0.1"/>
     </dependencies>
   </metadata>
 </package>

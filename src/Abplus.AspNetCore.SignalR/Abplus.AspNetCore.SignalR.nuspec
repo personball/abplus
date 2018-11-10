@@ -15,10 +15,9 @@
     <copyright>Copyright 2018</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="Abp" version="3.8.3" />
-      <dependency id="Abp.AspNetCore.SignalR" version="3.8.3" />
-      <dependency id="StackExchange.Redis" version="1.2.6" />
       <dependency id="Abplus" version="$version$" />
+      <dependency id="Abp.AspNetCore.SignalR" version="4.0.1" />
+      <dependency id="StackExchange.Redis" version="1.2.6" />
     </dependencies>
   </metadata>
 </package>

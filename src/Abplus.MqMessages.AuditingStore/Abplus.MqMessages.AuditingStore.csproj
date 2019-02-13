@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="abp" Version="4.0.1" />
+    <PackageReference Include="abp" Version="4.2.0" />
   </ItemGroup>
 
   <ItemGroup>

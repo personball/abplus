@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp" Version="4.0.1" />
-    <PackageReference Include="Abp.AutoMapper" Version="4.0.1" />
+    <PackageReference Include="Abp" Version="4.2.0" />
+    <PackageReference Include="Abp.AutoMapper" Version="4.2.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -10,8 +10,7 @@ namespace Abp.MqMessages
         /// <summary>
         /// 
         /// </summary>
-        public static NullMqMessagePublisher Instance { get { return SingletonInstance; } }
-        private static readonly NullMqMessagePublisher SingletonInstance = new NullMqMessagePublisher();
+        public static NullMqMessagePublisher Instance { get; } = new NullMqMessagePublisher();
 
         /// <summary>
         /// 

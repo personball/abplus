@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Abp.IO.AzureBlobStorage
+﻿namespace Abp.IO.AzureBlobStorage
 {
-    class AzureBlobFileStorageSettingNames
+    public static class AzureBlobFileStorageSettingNames
     {
+        public const string AccountName = "Abplus.IO.AzureBlobStorage.AccountName";
+        public const string AccountKey = "Abplus.IO.AzureBlobStorage.AccountKey";
+        public const string Container = "Abplus.IO.AzureBlobStorage.Container";
+        public const string EndpointSuffix = "Abplus.IO.AzureBlobStorage.EndpointSuffix";
+        // string ThumbnailContainer { get; set; }
     }
 }

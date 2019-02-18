@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="zh-Hans">
+  <texts>
+    <text name="StoreRootDirectory" value="本地文件存储根目录" />
+    <text name="AccessUriRootPath" value="根目录的Web访问地址" />
+  </texts>
+</localizationDictionary>

@@ -26,7 +26,7 @@ namespace Abp.IO.LocalFileSystem
 
         private static LocalizableString L(string name)
         {
-            return new LocalizableString(name, "AbplusIO");
+            return new LocalizableString(name, LocalFileSystemConsts.LocalizationSourceName);
         }
     }
 }

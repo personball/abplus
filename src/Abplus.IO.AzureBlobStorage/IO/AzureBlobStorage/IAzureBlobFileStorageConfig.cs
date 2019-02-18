@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Abp.IO.AzureBlobStorage
+﻿namespace Abp.IO.AzureBlobStorage
 {
-    class IAzureBlobFileStorageConfig
+    public interface IAzureBlobFileStorageConfig
     {
+        string AccountName { get;  }
+        string AccountKey { get; }
+        string Container { get;  }
+        // string ThumbnailContainer { get; }
+        string EndpointSuffix { get; }
     }
 }

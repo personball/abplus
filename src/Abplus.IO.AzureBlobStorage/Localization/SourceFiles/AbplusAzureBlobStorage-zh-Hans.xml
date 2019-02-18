@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="zh-Hans">
+  <texts>
+    <text name="AzureBlobFileStorageAccountName" value="Azure存储账户" />
+    <text name="AzureBlobFileStorageAccountKey" value="访问认证Key" />
+    <text name="AzureBlobFileStorageContainer" value="Blob容器名称" />
+    <!--Endpoint Suffix即Azure版本，国际版填写core.windows.net 世纪互联版填core.chinacloudapi.cn-->
+    <text name="AzureBlobFileStorageEndpointSuffix" value="Endpoint Suffix" />
+  </texts>
+</localizationDictionary>

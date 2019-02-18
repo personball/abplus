@@ -5,6 +5,17 @@
     <RootNamespace>Abp</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Localization\SourceFiles\AbplusAzureBlobStorage-zh-Hans.xml" />
+    <None Remove="Localization\SourceFiles\AbplusAzureBlobStorage.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\SourceFiles\AbplusAzureBlobStorage-zh-Hans.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AbplusAzureBlobStorage.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="9.4.2" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Abplus\Abplus.csproj" />
   </ItemGroup>
 

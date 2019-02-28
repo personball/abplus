@@ -10,7 +10,9 @@ namespace Abp.IO.LocalFileSystem
     {
         public override void Initialize()
         {
-            IocManager.Register<ILocalFileSystemStorageConfig, LocalFileSystemStorageConfig>();
+            //IocManager.Register<ILocalFileSystemStorageConfig, LocalFileSystemStorageConfig>();
+
+            IocManager.Register<IFileStorage, LocalFileSystemStorage>();
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
             LocalFileSystemLocalizationConfigurer.Configure(Configuration.Localization);

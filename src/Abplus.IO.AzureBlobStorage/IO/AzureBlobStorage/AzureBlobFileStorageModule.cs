@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
-using Abp.Modules;
+using Abp.IO.AzureBlobStorage.Configuration;
 using Abp.Localization;
+using Abp.Modules;
 
 namespace Abp.IO.AzureBlobStorage
 {
@@ -10,8 +11,23 @@ namespace Abp.IO.AzureBlobStorage
     [DependsOn(typeof(AbpKernelModule))]//依赖SettingManager
     public class AzureBlobFileStorageModule : AbpModule
     {
+        public override void PreInitialize()
+        {
+            IocManager.Register<IAzureBlobFileStorageModuleConfig, AzureBlobFileStorageModuleConfig>();
+        }
+
         public override void Initialize()
         {
+            var moduleConfig = IocManager.Resolve<IAzureBlobFileStorageModuleConfig>();
+            if (moduleConfig.UseSettingManager)
+            {
+                IocManager.Register<IAzureBlobFileStorageConfig, AzureBlobFileStorageSetting>();
+            }
+            else
+            {
+                IocManager.Register<IAzureBlobFileStorageConfig, AzureBlobFileStorageConfig>();
+            }
+
             IocManager.Register<IFileStorage, AzureBlobFileStorage>();
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 

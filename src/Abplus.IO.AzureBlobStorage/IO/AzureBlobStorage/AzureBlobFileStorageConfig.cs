@@ -1,50 +1,20 @@
-﻿using Abp.Configuration;
-
-namespace Abp.IO.AzureBlobStorage
+﻿namespace Abp.IO.AzureBlobStorage
 {
-    /// <summary>
-    /// 通过SettingManager可以实现每个Tenant配置自己的Azure存储
-    /// </summary>
     public class AzureBlobFileStorageConfig : IAzureBlobFileStorageConfig
     {
-        protected SettingManager SettingManager;
+        private readonly IAzureBlobFileStorageModuleConfig _moduleConfig;
 
-        public AzureBlobFileStorageConfig(SettingManager settingManager)
+        public AzureBlobFileStorageConfig(IAzureBlobFileStorageModuleConfig moduleConfig)
         {
-            SettingManager = settingManager;
+            _moduleConfig = moduleConfig;
         }
 
-        public string AccountName
-        {
-            get
-            {
-                return SettingManager.GetSettingValue(AzureBlobFileStorageSettingNames.AccountName);
-            }
-        }
+        public string AccountName => _moduleConfig.AccountName;
 
-        public string AccountKey
-        {
-            get
-            {
-                return SettingManager.GetSettingValue(AzureBlobFileStorageSettingNames.AccountKey);
-            }
-        }
+        public string AccountKey => _moduleConfig.AccountKey;
 
-        public string Container
-        {
+        public string Container => _moduleConfig.Container;
 
-            get
-            {
-                return SettingManager.GetSettingValue(AzureBlobFileStorageSettingNames.Container);
-            }
-        }
-
-        public string EndpointSuffix
-        {
-            get
-            {
-                return SettingManager.GetSettingValue(AzureBlobFileStorageSettingNames.EndpointSuffix);
-            }
-        }
+        public string EndpointSuffix => _moduleConfig.EndpointSuffix;
     }
 }

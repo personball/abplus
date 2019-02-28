@@ -2,7 +2,7 @@
 using Abp.Configuration;
 using Abp.Localization;
 
-namespace Abp.IO.AzureBlobStorage
+namespace Abp.IO.AzureBlobStorage.Configuration
 {
     public class AzureBlobFileStorageSettingProvider : SettingProvider
     {

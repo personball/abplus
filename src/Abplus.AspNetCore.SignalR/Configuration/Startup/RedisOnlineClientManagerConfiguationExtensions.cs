@@ -1,5 +1,4 @@
-﻿using Abp.Configuration.Startup;
-using Abp.RealTime;
+﻿using Abp.RealTime;
 
 namespace Abp.Configuration.Startup
 {

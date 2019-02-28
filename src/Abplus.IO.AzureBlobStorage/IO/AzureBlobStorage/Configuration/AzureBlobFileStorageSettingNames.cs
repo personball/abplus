@@ -1,4 +1,4 @@
-﻿namespace Abp.IO.AzureBlobStorage
+﻿namespace Abp.IO.AzureBlobStorage.Configuration
 {
     public static class AzureBlobFileStorageSettingNames
     {

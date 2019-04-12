@@ -12,11 +12,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Abp plus, an extension for Abp Framework. </description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2018</copyright>
+    <copyright>Copyright 2019</copyright>
     <tags></tags>
     <dependencies>
       <dependency id="Abplus" version="$version$" />
-      <dependency id="Abp.AutoMapper" version="4.5.0" />
     </dependencies>
   </metadata>
 </package>

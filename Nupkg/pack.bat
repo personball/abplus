@@ -9,3 +9,5 @@ dotnet pack ..\src\Abplus.MqMessages.RebusRabbitMqConsumer\Abplus.MqMessages.Reb
 dotnet pack ..\src\Abplus.MqMessages.RebusRabbitMqPublisher\Abplus.MqMessages.RebusRabbitMqPublisher.csproj -o ..\..\nupkg\
 dotnet pack ..\src\Abplus.MqMessages.RedisStoreMessageTracker\Abplus.MqMessages.RedisStoreMessageTracker.csproj -o ..\..\nupkg\
 dotnet pack ..\src\Abplus.T4.PermissionsFromJson\Abplus.T4.PermissionsFromJson.csproj -o ..\..\nupkg\
+
+dotnet pack ..\src\Abplus.IO.AzureBlobStorage\Abplus.IO.AzureBlobStorage.csproj -o ..\..\nupkg\

@@ -28,10 +28,10 @@ namespace Sample.AliyunOSSStorage.BackgroundWorker
             var url = AsyncHelper.RunSync(() => _fileStorage.Save(file, newName, "canteen/product"));
             Console.WriteLine(url);
 
-            //var bytesFromAzure = AsyncHelper.RunSync(() => _fileStorage.ReadAsBytes(newName, "test"));
-            //File.WriteAllBytes(newName, bytesFromAzure);
+            var bytesFromAzure = AsyncHelper.RunSync(() => _fileStorage.ReadAsBytes(newName, "canteen/product"));
+            File.WriteAllBytes(newName, bytesFromAzure);
 
-            //AsyncHelper.RunSync(() => _fileStorage.Delete(newName, "canteen/product"));
+            AsyncHelper.RunSync(() => _fileStorage.Delete(newName, "canteen/product"));
 
             using (var fs = new FileStream("plane.jpg", FileMode.Open))
             {

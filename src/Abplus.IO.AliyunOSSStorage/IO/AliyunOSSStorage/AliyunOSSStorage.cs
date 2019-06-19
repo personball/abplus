@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Abp.Dependency;
 using Abp.Extensions;
+using Abp.IO.Extensions;
 using Aliyun.OSS;
 using Castle.Core.Logging;
 
@@ -30,12 +31,36 @@ namespace Abp.IO.AliyunOSSStorage
 
         public Task Delete(string fileName, string subPath = null)
         {
-            throw new NotImplementedException();
+            if (!subPath.IsNullOrWhiteSpace())
+            {
+                subPath = subPath.EnsureEndsWith('/');
+            }
+
+            _client.Value.DeleteObject(_config.BucketName, $"{subPath}{fileName}");
+            return Task.FromResult(0);
         }
 
         public Task<byte[]> ReadAsBytes(string fileName, string subPath = null)
         {
-            throw new NotImplementedException();
+            if (!subPath.IsNullOrWhiteSpace())
+            {
+                subPath = subPath.EnsureEndsWith('/');
+            }
+
+            var ossObj = _client.Value.GetObject(_config.BucketName, $"{subPath}{fileName}");
+            try
+            {
+                using (var rs = ossObj.Content)
+                {
+                    var bytes = rs.GetAllBytes();
+                    return Task.FromResult(bytes);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex.Message, ex);
+                throw ex;
+            }
         }
 
         public Task<string> Save(Stream source, string fileName, string subPath = null)
@@ -46,7 +71,7 @@ namespace Abp.IO.AliyunOSSStorage
             }
 
             _client.Value.PutObject(_config.BucketName, $"{subPath}{fileName}", source);
-            
+
             if (!_config.UriPrefix.IsNullOrWhiteSpace())
             {
                 return Task.FromResult($"{_config.UriPrefix.EnsureEndsWith('/')}{subPath}{fileName}");

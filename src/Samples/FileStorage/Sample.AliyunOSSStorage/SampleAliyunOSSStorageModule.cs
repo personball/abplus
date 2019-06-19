@@ -12,12 +12,12 @@ namespace Sample.AliyunOSSStorage
     {
         public override void PreInitialize()
         {
-            //Configuration.Modules.UseAliyunOSSStorage()
-            //    .SetAccessKeyId("")
-            //    .SetAccessKeySecret("")
-            //    .SetBucketName("")
-            //    .SetEndpoint("oss-cn-qingdao.aliyuncs.com")
-            //    .WithUriPrefix("https://pic.xxxxx.com");
+            Configuration.Modules.UseAliyunOSSStorage()
+                .SetAccessKeyId("")
+                .SetAccessKeySecret("")
+                .SetBucketName("")
+                .SetEndpoint("oss-cn-qingdao.aliyuncs.com")
+                .WithUriPrefix("https://pic.xxxxxxx.com");
         }
 
         public override void Initialize()

@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="abp" Version="4.5.0" />
+    <PackageReference Include="abp" Version="4.6.0" />
     <PackageReference Include="Rebus.Castle.Windsor" Version="4.1.0" />
     <PackageReference Include="rebus.rabbitmq" Version="4.4.2" />
   </ItemGroup>

@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <RootNamespace>Sample.AzureBlobStorage</RootNamespace>
+    <RootNamespace>Sample.AliyunOSSStorage</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Abplus.IO.AzureBlobStorage\Abplus.IO.AzureBlobStorage.csproj" />
+    <ProjectReference Include="..\..\..\Abplus.IO.AliyunOSSStorage\Abplus.IO.AliyunOSSStorage.csproj" />
     <ProjectReference Include="..\..\..\Abplus\Abplus.csproj" />
   </ItemGroup>
 

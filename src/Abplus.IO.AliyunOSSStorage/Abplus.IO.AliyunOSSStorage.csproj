@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="..\..\common.props"></Import>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+     <RootNamespace>Abp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Localization\SourceFiles\AliyunOSSStorage-zh-Hans.xml" />
+    <None Remove="Localization\SourceFiles\AliyunOSSStorage.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\SourceFiles\AliyunOSSStorage-zh-Hans.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliyunOSSStorage.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="4.6.0" />
+    <PackageReference Include="Aliyun.OSS.SDK.NetCore" Version="2.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abplus\Abplus.csproj" />
+  </ItemGroup>
+
+</Project>

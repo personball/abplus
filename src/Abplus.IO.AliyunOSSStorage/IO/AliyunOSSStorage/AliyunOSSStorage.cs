@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using Abp.Dependency;
 using Abp.Extensions;
@@ -11,7 +12,7 @@ namespace Abp.IO.AliyunOSSStorage
 {
     public class AliyunOSSStorage : IFileStorage
     {
-        private static Lazy<OssClient> _client = new Lazy<OssClient>(InitClient, false);
+        private static Lazy<OssClient> _client = new Lazy<OssClient>(InitClient, LazyThreadSafetyMode.PublicationOnly);
 
         private static OssClient InitClient()
         {

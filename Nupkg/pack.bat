@@ -11,3 +11,4 @@ dotnet pack ..\src\Abplus.MqMessages.RedisStoreMessageTracker\Abplus.MqMessages.
 dotnet pack ..\src\Abplus.T4.PermissionsFromJson\Abplus.T4.PermissionsFromJson.csproj -o ..\..\nupkg\
 
 dotnet pack ..\src\Abplus.IO.AzureBlobStorage\Abplus.IO.AzureBlobStorage.csproj -o ..\..\nupkg\
+dotnet pack ..\src\Abplus.IO.AliyunOSSStorage\Abplus.IO.AliyunOSSStorage.csproj -o ..\..\nupkg\

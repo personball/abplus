@@ -54,7 +54,9 @@ namespace Abp.MqMessages.Publishers
 
         public async Task PublishAsync(object mqMessages)
         {
-            Logger.Debug(mqMessages.GetType().FullName + ":" + mqMessages.ToJsonString());
+	        TryFillSessionInfo(mqMessages);
+
+			Logger.Debug(mqMessages.GetType().FullName + ":" + mqMessages.ToJsonString());
 
             await _bus.Publish(mqMessages);
         }

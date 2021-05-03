@@ -25,8 +25,9 @@ namespace Abp.Application.Navigation
                     plugInMenuName,
                     new FixedLocalizableString(fixedDisplayName),
                     url: url,
-                    icon: icon,
-                    requiredPermissionName: requiredPermission
+                    icon: icon
+                    //permissionDependency:
+                    //requiredPermissionName: requiredPermission
                     );
 
                 menu.AddItem(plugInRoot);

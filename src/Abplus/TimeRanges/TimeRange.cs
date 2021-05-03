@@ -4,7 +4,7 @@ using Abp.Domain.Values;
 
 namespace Abp.TimeRanges
 {
-    public class TimeRange : ValueObject<TimeRange>
+    public class TimeRange : ValueObject
     {
         protected TimeRange() { }
 
@@ -74,6 +74,12 @@ namespace Abp.TimeRanges
             }
 
             return false;
+        }
+
+        protected override IEnumerable<object> GetAtomicValues()
+        {
+            yield return From;
+            yield return To;
         }
     }
 }

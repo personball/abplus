@@ -3,13 +3,13 @@
   <Import Project="..\..\common.props"></Import>
   
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <RootNamespace>Abp</RootNamespace>
     <AssemblyName>Abplus</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="abp" Version="4.6.0" />
+    <PackageReference Include="abp" Version="6.3.1" />
   </ItemGroup>
 
 </Project>

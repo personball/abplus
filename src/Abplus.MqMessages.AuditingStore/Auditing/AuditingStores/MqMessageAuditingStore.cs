@@ -1,6 +1,7 @@
 ﻿using Abp.Dependency;
 using Abp.MqMessages;
 using Abp.MqMessages.AuditingStores;
+using Abp.Threading;
 using System;
 using System.Threading.Tasks;
 
@@ -16,6 +17,11 @@ namespace Abp.Auditing.AuditingStores
             {
                 return IocManager.Instance.Resolve<IMqMessagePublisher>();
             });
+        }
+
+        public void Save(AuditInfo auditInfo)
+        {
+            AsyncHelper.RunSync(() => SaveAsync(auditInfo));
         }
 
         public async Task SaveAsync(AuditInfo auditInfo)

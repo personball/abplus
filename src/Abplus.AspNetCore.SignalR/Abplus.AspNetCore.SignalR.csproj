@@ -2,13 +2,13 @@
   <Import Project="..\..\common.props"></Import>
   
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Abp</RootNamespace>
     <AssemblyName>Abplus.AspNetCore.SignalR</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="abp" Version="4.6.0" />
+    <PackageReference Include="abp" Version="6.3.1" />
     <PackageReference Include="Abp.AspNetCore.SignalR" Version="4.5.0" />
     <PackageReference Include="stackexchange.redis" Version="1.2.6" />
   </ItemGroup>

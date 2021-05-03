@@ -15,9 +15,9 @@ namespace Sample.AliyunOSSStorage
             Configuration.Modules.UseAliyunOSSStorage()
                 .SetAccessKeyId("")
                 .SetAccessKeySecret("")
-                .SetBucketName("")
-                .SetEndpoint("oss-cn-qingdao.aliyuncs.com")
-                .WithUriPrefix("https://pic.xxxxxxx.com");
+                .SetBucketName("xxxxx")
+                .SetEndpoint("oss-cn-hangzhou.aliyuncs.com")
+                .WithUriPrefix("https://xxxxx.oss-cn-hangzhou.aliyuncs.com");
         }
 
         public override void Initialize()

@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="abp" Version="4.6.0" />
+    <PackageReference Include="abp" Version="6.3.1" />
   </ItemGroup>
 
   <ItemGroup>
